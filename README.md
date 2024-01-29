@@ -49,7 +49,7 @@
  >      - Will also feature a win/lose condition should the player reach the end of the game or if the
  >          player dies in battle with the option to restart game or forfeit game.
  >
- > * In short our project will be: 
+ > * In short our project will be:  
  >      - Text-based RPG where the player will battle enemies in turn-based combat, have a level system 
  >          (subject to change), loot pool for different rarity items as drops or chest opens, a win or 
  >          lose system, different combat styles based on class/weapon, text based description for 
