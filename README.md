@@ -18,6 +18,12 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+ >      - This project is interesting because it combines the essentials of team collaboration, such as
+ >          Scrum patterns, with the practical application of game design. In particular, since 
+ >          class-based RPGs require intricate knowledge of necessary coding features like classes 
+ >          and inheritance, this project will be a fun challenge of both teamwork and good coding
+ >          Practice.
+
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  > * What will be the input/output of your project?
  > * What are the features that the project provides?
