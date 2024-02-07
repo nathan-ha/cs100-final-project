@@ -1,67 +1,56 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# CS100 RPG Group Project
- > Your author list below should include links to all members GitHub (remove existing author).
- 
- > Authors: [Claire Lu](https://github.com/claire-lu-113),
- >          [Kent Liang](https://github.com/kliang193),
- >          [Nathan Ha](https://github.com/nathan-ha),
- >          [Natalie Shin](https://github.com/nats26) 
- 
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
+# A Very Fun Game
 
- > ## Expectations
- > * The backend of your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
- > * **Each member of the group must actively participate in the Github Project board, writing unit tests, and reviewing commited code.**
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
-
+  Authors: [Claire Lu](https://github.com/claire-lu-113),
+           [Kent Liang](https://github.com/kliang193),
+           [Nathan Ha](https://github.com/nathan-ha),
+           [Natalie Shin](https://github.com/nats26) 
+ 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- >      - This project is interesting because it combines the essentials of team collaboration, such as
- >          Scrum patterns, with the practical application of game design. In particular, since 
- >          class-based RPGs require intricate knowledge of necessary coding features like classes 
- >          and inheritance, this project will be a fun challenge of both teamwork and good coding
- >          Practice.
- >
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >      - We plan to implement this project in C++. We will be using VSCode as our main IDE and use 
- >          gitHub to collaborate. By utilizing the GitHub Project board, we can effectively 
- >          contribute code and reviews. We will also be utilizing slack and/or discord as our
- >          main communications hub.
- >
- > * What will be the input/output of your project?
- >      - The input will be based on the player’s situation while ingame. It could be a variation
- >          of simple yes(y)/no(n) inputs or action based inputs such as movements (w,a,s,d) or 
- >          interactions(e,x,c, etc…).
- >      - The output will be a series of brief descriptions based on where/what the player is doing.
- >           With a end condition output should the player reach the end or if player dies with a
- >           prompt to restart game from the beginning. 
- >
- > * What are the features that the project provides?
- >      - This is a turn-based text RPG that will feature character classes, all with unique weapons, 
- >          armor, and abilities. 
- >      - Features a level system where player can choose to grind for better or higher rarity gear or 
- >          higher levels before progressing forward (subject to change).
- >      - Will also feature a win/lose condition should the player reach the end of the game or if the
- >          player dies in battle with the option to restart game or forfeit game.
- >
- > * In short our project will be:  
- >      - Text-based RPG where the player will battle enemies in turn-based combat, have a level system 
- >          (subject to change), loot pool for different rarity items as drops or chest opens, a win or 
- >          lose system, different combat styles based on class/weapon, text based description for 
- >          each scenario the player is in, and a variety of text based actions.
- >
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
- >
- > ## README.md Disclaimer
- > * project description was collaborated via google docs file first before is agreed upon that project discription should be committed by 1 person for ease of upload for the initial commits.
- >
+  * Why is it important or interesting to you?
+       - This project is interesting because it combines the essentials of team collaboration, such as
+           Scrum patterns, with the practical application of game design. In particular, since 
+           class-based RPGs require intricate knowledge of necessary coding features like classes 
+           and inheritance, this project will be a fun challenge of both teamwork and good coding
+           Practice.
+ 
+  * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+       - We plan to implement this project in C++. We will be using VSCode as our main IDE and use 
+           gitHub to collaborate. By utilizing the GitHub Project board, we can effectively 
+           contribute code and reviews. We will also be utilizing slack and/or discord as our
+           main communications hub.
+ 
+  * What will be the input/output of your project?
+       - The input will be based on the player’s situation while ingame. It could be a variation
+           of simple yes(y)/no(n) inputs or action based inputs such as movements (w,a,s,d) or 
+           interactions(e,x,c, etc…).
+       - The output will be a series of brief descriptions based on where/what the player is doing.
+            With a end condition output should the player reach the end or if player dies with a
+            prompt to restart game from the beginning. 
+ 
+  * What are the features that the project provides?
+       - This is a turn-based text RPG that will feature character classes, all with unique weapons, 
+           armor, and abilities. 
+       - Features a level system where player can choose to grind for better or higher rarity gear or 
+           higher levels before progressing forward (subject to change).
+       - Will also feature a win/lose condition should the player reach the end of the game or if the
+           player dies in battle with the option to restart game or forfeit game.
+ 
+  * In short our project will be:  
+       - Text-based RPG where the player will battle enemies in turn-based combat, have a level system 
+           (subject to change), loot pool for different rarity items as drops or chest opens, a win or 
+           lose system, different combat styles based on class/weapon, text based description for 
+           each scenario the player is in, and a variety of text based actions.
+ 
+  
+>   You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project 
+> repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
+ 
+  ## README.md Disclaimer
+  * project description was collaborated via google docs file first before is agreed upon that project discription should be committed by 1 person for ease of upload for the initial commits.
+ 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
