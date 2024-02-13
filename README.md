@@ -44,10 +44,7 @@
            lose system, different combat styles based on class/weapon, text based description for 
            each scenario the player is in, and a variety of text based actions.
  
-  
->   You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project 
-> repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
- 
+   
    ## Phase II
    ## User Interface Specification
 
