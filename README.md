@@ -49,8 +49,7 @@
 > repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  
    ## Phase II
-    * Break down the "Epics" into smaller actionable user stories: See Issues section or Kanban board.
-  ## User Interface Specification
+   ## User Interface Specification
 
 ### Navigation Diagram
 ![nav diagram](https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/130444120/31d1a4e1-5b16-48f3-9462-c29ebab99bc6)
