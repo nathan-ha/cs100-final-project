@@ -84,7 +84,7 @@ There are three getter and setter functions that will get/set the IGN (in game n
  
 **Wolf, Goblin, Skeleton, Dragon:** Similar to the player classes, these will inherit from the Character class. Unlike the player classes, however, these will be reserved for enemies that the player will face. The “enemies” will have methods that are only used for attacking the character. 
  
-	**Weapon Class:** A small class that will represent the weapons that each character will carry. Each weapon will have a name, a damage value, and a specific class that can wield a given weapon. It will be implemented in the character class.
+**Weapon Class:** A small class that will represent the weapons that each character will carry. Each weapon will have a name, a damage value, and a specific class that can wield a given weapon. It will be implemented in the character class.
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
