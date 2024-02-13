@@ -61,6 +61,8 @@
 
 ![nav diagram](https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/130444120/31d1a4e1-5b16-48f3-9462-c29ebab99bc6)
 
+The diagram starts where the user will chooose their IGN (in game name). They will choose a game difficulty, choose, their class (archer, thief, or warrior), then play the game. Whether they win, lose, or quit, they will be redirected to the restart page. If they choose to restart, they will be prompted to the game difficulty once more. If not, the program will end. At all points and choices in the game given, the user will be given the choice to quit.
+
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
