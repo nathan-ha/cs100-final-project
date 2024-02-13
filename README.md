@@ -48,25 +48,18 @@
 >   You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project 
 > repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  
-  ## README.md Disclaimer
-  * project description was collaborated via google docs file first before is agreed upon that project discription should be committed by 1 person for ease of upload for the initial commits.
- 
-  ## Phase II
+   ## Phase II
     * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column (aka Sprint Backlog).
   ## User Interface Specification
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
-
 ![nav diagram](https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/130444120/31d1a4e1-5b16-48f3-9462-c29ebab99bc6)
 
 The diagram starts where the user will chooose their IGN (in game name). They will choose a game difficulty, choose, their class (archer, thief, or warrior), then play the game. Whether they win, lose, or quit, they will be redirected to the restart page. If they choose to restart, they will be prompted to the game difficulty once more. If not, the program will end. At all points and choices in the game given, the user will be given the choice to quit.
 
 
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
-
 As a text-based RPG, the screen layout of the game will generally follow the same formula: the player is presented with a text prompt to select one of multiple options. Differences in this formula include in the beginning of the game, when the user is prompted for a string input for their name. 
 
 **Name prompt screen (requires user input):**
