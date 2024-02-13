@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# A Very Fun Game
+# Dragonslayer's Quest
 
   Authors: [Claire Lu](https://github.com/claire-lu-113),
            [Kent Liang](https://github.com/kliang193),
@@ -66,6 +66,108 @@ The diagram starts where the user will chooose their IGN (in game name). They wi
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
+
+As a text-based RPG, the screen layout of the game will generally follow the same formula: the player is presented with a text prompt to select one of multiple options. Differences in this formula include in the beginning of the game, when the user is prompted for a string input for their name. 
+
+**Name prompt screen (requires user input):**
+```
+CHOOSE YOUR NAME: (user input)
+```
+The end of the game, whether it results in a loss or win, will have only the options to restart or exit the game. 
+
+**Loss screen:**
+```
+GAME OVER
+> Restart
+> Exit
+```
+The middle portion of the game past inputting an username will have the following text prompts and options based on their type of scenario:
+
+**Choosing Character Class:** At the start of the game, the player is presented with three unique character classes, Warrior, Archer, and Thief, along with their descriptions. 
+```
+CHOOSE YOUR CLASS:
+1.WARRIOR
+Physical attack - sword swing
+Special attack - Flame Strike (fire elemental damage skill: does small damage per turn for x turns)
+2.ARCHER
+Physical attack - shoot arrow
+Special attack - Wind Arrow (wind elemental damage skill: damage multiplier towards base attack)
+3.THIEF
+Physical attack - stab
+Special attack - Mirage Step (water elemental evasive skill: dodge skill for 1-2 turns)
+
+> Warrior
+> Archer
+> Thief
+```
+**Combat:** The player is presented with a screen displaying the enemy, which will be a Goblin, Skeleton, Wolf, or Dragon. Depending on the specific enemy, the damage and debuff outputs will be different. However, what is not reliant on the enemy class is the player’s current weapon, consumables, and character class. 
+For example, a standard skeleton fighting an archer character will have the following screen:
+```
+A wild Skeleton appeared! 
+
+> Attack
+> Special Attack
+> Inventory
+> Flee
+```
+Upon choosing attack:
+```
+PLAYER shot an arrow ! Skeleton has resisted the attack !
+
+10 Health has been depleted from Skeleton
+40 Health remaining.
+
+Skeleton has attacked !
+
+20 Health has been depleted from PLAYER.
+120 Heath remaining.
+```
+
+Upon choosing special attack:
+
+```
+PLAYER used Wind Arrow ! Skeleton has taken elemental damage !
+
+25 Health has been depleted from Skeleton.
+25 Health remaining.
+
+Skeleton has attacked !
+
+23 Health has been depleted from PLAYER.
+117 Health remaining.
+```
+Successfully fleeing the battle will yield the screen:
+```
+You have fled the battle !
+```
+(Accessing the inventory will redirect you to the inventory screen.)
+
+**Inventory:**  Inventory screens occur when the player accesses it during a combat scene, or if an item must be dropped for another item.
+
+In combat, it displays consumables. For example, the Thief inventory would display:
+
+```
+Accessing Inventory…
+Current Weapon: Simple Sword
+> Throwing Knifes
+> Exit Inventory
+```
+In weapon swapping, it would display as such:
+
+```
+Accessing Inventory…
+Current Weapon: Simple Sword
+Swap for Glowing Dagger ?
+>Yes
+>No
+```
+**Story:** General story decisions will describe a scenario in which a player, not in combat or decision making danger, will choose between presented options in order to progress the story itself. These types of screens serve as an intermediary between combat scenes for the player to ‘decide’ which combat situation they would like to enter into. For example, to progress towards a battle with goblins in a cave, the screen would resemble:
+```
+Ahead of you is a dark cave, dimly lit by torches along its walls. You see scratch marks on the wall and smell the distinct scent of rotting flesh. There are two paths in the cave, one lit and the other pitch black. Which do you choose?
+> Lit path
+> Dark path
+```
+
 
 ## Class Diagram
 
