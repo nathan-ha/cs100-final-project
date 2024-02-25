@@ -1,0 +1,8 @@
+CMakeFiles/
+Makefile
+*.CMakeFiles
+*.a
+*.cmake
+CMakeCache.txt
+runAllTests
+
