@@ -4,10 +4,10 @@ using std::string;
 
 enum character_class
 {
-    Thief,
-    Warrior,
-    Archer,
-    Enemy
+    THIEF,
+    WARRIOR,
+    ARCHER,
+    ENEMY
 };
 
 struct Weapon

@@ -1,6 +1,13 @@
 #include "../../header/thief.h"
 #include <iostream>
 
+Thief::Thief(const string &name, const string &race, int health, const Weapon &current_weapon)
+    : Character(name, race, health, current_weapon),
+      throwing_knife_count(5),
+      is_invulnerable(false)
+{
+}
+
 void Thief::stab(Character &target)
 {
     int dmg_amount = 10;
