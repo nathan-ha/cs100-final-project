@@ -1,7 +1,7 @@
 #pragma once
 #include "character.h"
 
-class goblin : public Character
+class Goblin : public Character
 {
 public:
     void attack(Character &target);

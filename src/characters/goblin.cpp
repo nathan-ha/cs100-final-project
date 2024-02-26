@@ -1,6 +1,6 @@
 #include "../../header/goblin.h"
 
-void goblin::attack(Character &target)
+void Goblin::attack(Character &target)
 {
     int dmg_amount = 5;
     int target_new_health = target.get_health() - dmg_amount;

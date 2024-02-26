@@ -17,8 +17,8 @@ using namespace std;
 */
 
 int main() {
-    Character c("name", "race", 0, Weapon("weapon", 10, character_class::Thief));
-    cout << "hell\n";
+    //Character c("name", "race", 0, Weapon("weapon", 10, character_class::Thief));
+    //cout << "hell\n";
 
 
     // Character(const string& name, const string& race, int health, const Weapon& current_weapon);
@@ -42,37 +42,37 @@ int main() {
     cout << "Now adventurer, state your name and let your name be inscribbed to the records" << endl;
 
     // Player's name input
-    string playername, playerclass;
-    cout << "Enter your name: ";
-    cin >> playername;
-    cout << "What is your class?" << endl << "(Choose from Warrior, Archer, or Thief" << endl;
-    cin >> playerclass;
-    bool passfail = true;
-    while(passfail){
-        if(playerclass == "Warrior" || playerclass == "warrior" || playerclass == "w" || playerclass == "W"){
-            Weapon playerweapon("Sword", 5, Warrior);
-            Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
-            passfail = false;//not sure if i should use break instead
-        }
-        else if(playerclass == "Archer" || playerclass == "archer" || playerclass == "a" || playerclass == "A"){
-            Weapon playerweapon("Bow", 5, Archer);
-            Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
-            passfail = false;
+    // string playername, playerclass;
+    // cout << "Enter your name: ";
+    // cin >> playername;
+    // cout << "What is your class?" << endl << "(Choose from Warrior, Archer, or Thief" << endl;
+    // cin >> playerclass;
+    // bool failcheck = true;
+    // while(failcheck){
+    //     if(playerclass == "Warrior" || playerclass == "warrior" || playerclass == "w" || playerclass == "W"){
+    //         Weapon playerweapon("Sword", 5, Warrior);
+    //         Character player(playername, "Human", 100, playerweapon);
+    //         cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
+    //         failcheck = false;//not sure if i should use break instead
+    //     }
+    //     else if(playerclass == "Archer" || playerclass == "archer" || playerclass == "a" || playerclass == "A"){
+    //         Weapon playerweapon("Bow", 5, Archer);
+    //         Character player(playername, "Human", 100, playerweapon);
+    //         cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
+    //         failcheck = false;
 
-        }
-        else if(playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T"){
-            Weapon playerweapon("Dagger", 5, Thief);
-            Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
-            passfail = false;
-        }
-        else{
-            cout << "Wrong class!"<< endl << "Choose your class" << endl;
-            cin >> playerclass;
-        }
-    }
+    //     }
+    //     else if(playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T"){
+    //         Weapon playerweapon("Dagger", 5, Thief);
+    //         Character player(playername, "Human", 100, playerweapon);
+    //         cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
+    //         failcheck = false;
+    //     }
+    //     else{
+    //         cout << "Wrong class!"<< endl << "Choose your class" << endl;
+    //         cin >> playerclass;
+    //     }
+    // }
 
 
 
