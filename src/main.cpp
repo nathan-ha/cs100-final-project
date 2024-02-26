@@ -16,7 +16,5 @@ using namespace std;
 */
 
 int main() {
-    Character c("name", "race", 0, Weapon("weapon", 10, character_class::Thief));
-    cout << "hell\n";
     return 0;
 }
