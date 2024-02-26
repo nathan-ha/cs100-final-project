@@ -1,5 +1,9 @@
 #include "../../header/goblin.h"
 
+
+Goblin::Goblin(const string &name, const string &race, int health, const Weapon &current_weapon):Character(name, race, health, current_weapon)
+{
+}
 void Goblin::attack(Character &target)
 {
     int dmg_amount = 5;
