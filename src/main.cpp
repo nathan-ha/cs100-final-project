@@ -48,7 +48,7 @@ int main() {
     cout << "What is your class?" << endl << "(Choose from Warrior, Archer, or Thief" << endl;
     cin >> playerclass;
     bool failcheck = true;
-    while(failcheck){
+    while(failcheck == true){
         if(playerclass == "Warrior" || playerclass == "warrior" || playerclass == "w" || playerclass == "W"){
             Weapon playerweapon("Sword", 5, WARRIOR);
             Character player(playername, "Human", 100, playerweapon);
@@ -65,7 +65,7 @@ int main() {
         else if(playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T"){
             Weapon playerweapon("Dagger", 5, THEIF);
             Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
+            cout << "Welcome, " << playerclass << " " << player.get_name() << " your name has been recorded" << endl;
             failcheck = false;
         }
         else{
