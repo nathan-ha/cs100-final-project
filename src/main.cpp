@@ -17,23 +17,8 @@ using namespace std;
 */
 
 int main() {
-    //Character c("name", "race", 0, Weapon("weapon", 10, character_class::Thief));
-    //cout << "hell\n";
-
-
-    // Character(const string& name, const string& race, int health, const Weapon& current_weapon);
-
-    // string get_name();
-    // void set_name(const string& new_name);
-
-    // string get_race();
-    // void set_race(const string& new_race);
-
-    // int get_health();
-    // void set_health(int new_health);
-
-    // void run_away();
-    // character_class get_class_type();
+    /*since the player can choose when to quit, will we implement some sort of loop?
+    or will we implement some sorta function that we pass in the input in for every action */ 
 
     cout << "Welcome adventurer, to His majeasty's DragonSlayer's Quest" << endl;
     cout << "His majeasty's sacred treasure has been stolen by the mythical dragon king from the northern mountains" << endl;
@@ -73,9 +58,5 @@ int main() {
             cin >> playerclass;
         }
     }
-
-
-
-
     return 0;
 }
