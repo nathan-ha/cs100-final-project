@@ -3,13 +3,8 @@
 #include "../header/skeleton.h"
 #include "../header/thief.h"
 
-TEST(characterTest, nameTest) {
-    Weapon sword("Sword", 20, character_class::THIEF);
-    Character c("Bob", "Human", 100, sword);
-    EXPECT_EQ(c.get_name(), "Bob");
-}
-
-TEST(swordTest, constructorTest) {
+TEST(swordTest, constructorTest)
+{
     Weapon w("sword", 20, character_class::THIEF);
     EXPECT_EQ(w.name, "sword");
     EXPECT_EQ(w.damage, 20);
@@ -17,93 +12,144 @@ TEST(swordTest, constructorTest) {
     EXPECT_EQ(w.name, "sword");
 }
 
-TEST(skeletonTest, nameTest) {
+TEST(skeletonTest, nameTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Bob", "monster", 100, sword);
     EXPECT_EQ(c.get_name(), "Bob");
 }
 
-TEST(skeletonTest, setNameTest) {
+TEST(skeletonTest, setNameTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Jim", "monster", 100, sword);
     c.set_name("Bob");
     EXPECT_EQ(c.get_name(), "Bob");
 }
 
-TEST(skeletonTest, raceTest) {
+TEST(skeletonTest, raceTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Jim", "monster", 100, sword);
     EXPECT_EQ(c.get_race(), "monster");
 }
 
-TEST(skeletonTest, setRaceTest) {
+TEST(skeletonTest, setRaceTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Jim", "monster", 100, sword);
     c.set_race("Big Skeleton");
     EXPECT_EQ(c.get_race(), "Big Skeleton");
 }
 
-TEST(skeletonTest, healthTest) {
+TEST(skeletonTest, healthTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Jim", "monster", 100, sword);
     EXPECT_EQ(c.get_health(), 100);
 }
 
-TEST(skeletonTest, getHealthTest) {
+TEST(skeletonTest, getHealthTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Jim", "monster", 100, sword);
     c.set_health(80);
     EXPECT_EQ(c.get_health(), 80);
 }
 
-TEST(skeletonTest, classTest) {
+TEST(skeletonTest, classTest)
+{
     Weapon sword("Sword", 20, character_class::ENEMY);
     Skeleton c("Jim", "monster", 100, sword);
     EXPECT_EQ(c.get_class_type(), character_class::ENEMY);
 }
 
+TEST(skeletonTest, attackTest)
+{
+    Weapon sword("Sword", 20, character_class::ENEMY);
+    Skeleton s("Jim", "monster", 100, sword);
+    Character c("Jim", "monster", 100, sword);
+    s.attack(c);
+    EXPECT_EQ(c.get_health(), 80);
+}
 
-TEST(thiefTest, nameTest) {
+TEST(thiefTest, nameTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Bob", "monster", 100, sword);
     EXPECT_EQ(c.get_name(), "Bob");
 }
 
-TEST(thiefTest, setNameTest) {
+TEST(thiefTest, setNameTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Jim", "monster", 100, sword);
     c.set_name("Bob");
     EXPECT_EQ(c.get_name(), "Bob");
 }
 
-TEST(thiefTest, raceTest) {
+TEST(thiefTest, raceTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Jim", "monster", 100, sword);
     EXPECT_EQ(c.get_race(), "monster");
 }
 
-TEST(thiefTest, setRaceTest) {
+TEST(thiefTest, setRaceTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Jim", "monster", 100, sword);
     c.set_race("Big Thief");
     EXPECT_EQ(c.get_race(), "Big Thief");
 }
 
-TEST(thiefTest, healthTest) {
+TEST(thiefTest, healthTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Jim", "monster", 100, sword);
     EXPECT_EQ(c.get_health(), 100);
 }
 
-TEST(thiefTest, setHealthTest) {
+TEST(thiefTest, setHealthTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Jim", "monster", 100, sword);
     c.set_health(80);
     EXPECT_EQ(c.get_health(), 80);
 }
 
-TEST(thiefTest, classTest) {
+TEST(thiefTest, classTest)
+{
     Weapon sword("Sword", 20, character_class::THIEF);
     Thief c("Jim", "monster", 100, sword);
     EXPECT_EQ(c.get_class_type(), character_class::THIEF);
+}
+
+TEST(thiefTest, stabTest)
+{
+    Weapon sword("Sword", 20, character_class::ENEMY);
+    Skeleton s("Jim", "monster", 100, sword);
+    Thief t("Jim", "human", 100, sword);
+    t.stab(s);
+    EXPECT_EQ(s.get_health(), 80);
+}
+
+TEST(thiefTest, throwKnifeTest)
+{
+    Weapon sword("Sword", 20, character_class::ENEMY);
+    Skeleton s("Jim", "monster", 100, sword);
+    Thief t("Jim", "human", 100, sword);
+    t.throw_knife(s);
+    EXPECT_EQ(s.get_health(), 90);
+}
+
+TEST(thiefTest, mirageStepTest)
+{
+    Weapon sword("Sword", 20, character_class::ENEMY);
+    Thief t("Jim", "human", 100, sword);
+    t.mirage_step();
+    EXPECT_EQ(t.get_is_invulnerable(), true);
+    
+    t.disable_mirage_step();
+    EXPECT_EQ(t.get_is_invulnerable(), false);
 }

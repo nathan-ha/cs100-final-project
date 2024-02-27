@@ -10,8 +10,7 @@ Thief::Thief(const string &name, const string &race, int health, const Weapon &c
 
 void Thief::stab(Character &target)
 {
-    int dmg_amount = 10;
-    int target_new_health = target.get_health() - dmg_amount;
+    int target_new_health = target.get_health() - current_weapon.damage;
     target.set_health(target_new_health);
 }
 
