@@ -48,7 +48,7 @@ int main() {
 
         }
         else if(playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T"){
-            Weapon playerweapon("Dagger", 5, THEIF);
+            Weapon playerweapon("Dagger", 5, THIEF);
             Character player(playername, "Human", 100, playerweapon);
             cout << "Welcome, " << playerclass << " " << player.get_name() << " your name has been recorded" << endl;
             failcheck = false;

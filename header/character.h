@@ -4,7 +4,7 @@ using std::string;
 
 enum character_class
 {
-    THEIF,
+    THIEF,
     WARRIOR,
     ARCHER,
     ENEMY
