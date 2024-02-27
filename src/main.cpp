@@ -18,5 +18,9 @@ using namespace std;
 int main() {
     Character c("name", "race", 0, Weapon("weapon", 10, character_class::Thief));
     cout << "hell\n";
+
+    /*since the player can choose when to quit, will we implement some sort of loop?
+    or will we implement some sorta function that we pass in the input in for every action */ 
+    
     return 0;
 }
