@@ -6,6 +6,7 @@ add_library(simpleLibrary
    characters/character.cpp
    characters/skeleton.cpp
    characters/thief.cpp
+   characters/goblin.cpp
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")

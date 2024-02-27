@@ -1,5 +1,9 @@
 #include <gtest/gtest.h>
-#include "../../../header/character.h"
+#include "../header/character.h"
+#include "../header/skeleton.h"
+#include "../header/thief.h"
+#include "../header/goblin.h"
+
 
 // tests for get_name function
 TEST(NameSuite, correctName) { // tests set_name(string) function too
@@ -59,4 +63,11 @@ TEST(HealthSuite, falseHealth) {
 TEST(ClassSuite, thief_default) {
     Character c("name", "race", 0, Weapon("weapon", 10, character_class::Thief));
     EXPECT_TRUE(c.get_class_type() == character_class::Thief);
+}
+
+TEST(GolbinTest, enemyraceTest) { 
+    Weapon club("club", 1, character_class::ENEMY);
+    Goblin c("Nameless goblin", "Monster", 5, club);
+    c.set_race("Goblin");
+    EXPECT_EQ(c.get_race(), "Goblin");
 }
