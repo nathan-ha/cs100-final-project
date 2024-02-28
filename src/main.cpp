@@ -77,9 +77,5 @@ int main() {
             cin >> playerclass;
         }
     }
-
-
-
-
     return 0;
 }
