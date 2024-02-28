@@ -4,5 +4,6 @@ Makefile
 *.a
 *.cmake
 CMakeCache.txt
-runAllTests
+bin/
+.vscode
 

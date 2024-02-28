@@ -83,7 +83,7 @@ int main() {
         cout << "Press onwards or turn back now? (y to press on, n for retreat)" << endl;
         cin >> FowardsOrRetreat;
         if (FowardsOrRetreat == "n" || FowardsOrRetreat == "N") {//is not optimal but will do for now.. need to make it so it takes y/n only and loops question if wrong input
-            cout << "Farewell Adventurer." << endl;
+            cout << "Farewell Adventurer." << endl;//placeholder for now
             break; // Exit the game loop
         }
         else{
