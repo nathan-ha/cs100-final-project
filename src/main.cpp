@@ -50,22 +50,26 @@ int main() {
     bool failcheck = true;
     while(failcheck == true){
         if(playerclass == "Warrior" || playerclass == "warrior" || playerclass == "w" || playerclass == "W"){
+            playerclass = "Warrior";
             Weapon playerweapon("Sword", 5, WARRIOR);
             Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
+            cout << "Welcome, " << playerclass << " " << player.get_race() << " " << player.get_name() << " your name has been recorded" << endl;
             failcheck = false;//not sure if i should use break instead
+            //maybe replace playerclass with player.get_class_type() later?
         }
         else if(playerclass == "Archer" || playerclass == "archer" || playerclass == "a" || playerclass == "A"){
+            playerclass = "Archer";
             Weapon playerweapon("Bow", 5, ARCHER);
             Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << "your name has been recorded" << endl;
+            cout << "Welcome, " << playerclass << " " << player.get_race() << " " << player.get_name() << " your name has been recorded" << endl;
             failcheck = false;
 
         }
         else if(playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T"){
+            playerclass = "Thief";
             Weapon playerweapon("Dagger", 5, THEIF);
             Character player(playername, "Human", 100, playerweapon);
-            cout << "Welcome, " << playerclass << " " << player.get_name() << " your name has been recorded" << endl;
+            cout << "Welcome, " << playerclass << " " << player.get_race() << " " << player.get_name() << " your name has been recorded" << endl;
             failcheck = false;
         }
         else{
