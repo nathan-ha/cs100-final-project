@@ -8,6 +8,7 @@ protected:
     bool is_invulnerable;
 
 public:
+    Thief(const string &name, const string &race, int health, const Weapon &current_weapon);
     void stab(Character &target);
     void throw_knife(Character &target);
     void mirage_step();
