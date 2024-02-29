@@ -33,7 +33,7 @@ int main() {
     cin >> playername;
     if(playername == "q" || playername == "Q"){
         cout << "Farewell unknown Adventurer." << endl;
-        return 0; // Exit the game loop
+        return 0; // Exit the game
     }
     
     cout << endl << "Very well Adventurer " << playername << ", The guild under the king's authority has presented you with 3 classes" << endl;
@@ -49,7 +49,7 @@ int main() {
     cin >> playerclass;
     if (playerclass == "q" || playerclass == "Q") {//repeat this chunck for player's options
         cout << "Farewell Adventurer" << endl;
-        return 0; // Exit the game loop
+        return 0; // Exit the game 
     }
     bool failcheck = true;
     while(failcheck == true){
@@ -92,17 +92,16 @@ int main() {
     }
     cout << "You set off on your adventure..." << endl;
     cout << "You exit the castle walls and enter the plains, it is known that goblins and skeletons freqently roam this area" << endl;
-    cout << "Press onwards or turn back now? (y to press on, n/N or q/Q for retreat)" << endl;
+    cout << "Press onwards or turn back now?" << endl << "(press anykey to press on, n/N or q/Q for retreat)" << endl;
     cin >> FowardsOrRetreat;
     if (FowardsOrRetreat == "n" || FowardsOrRetreat == "N" || FowardsOrRetreat == "q" || FowardsOrRetreat == "Q") {
         cout << "Farewell Adventurer." << endl;//placeholder for now
-        return 0; // Exit the game loop
+        return 0; // Exit the game
     }
-    else{
-        cout << "Knowing the dangers, you press on..." << endl;//placeholder
-        /*
-        first battle goes here
-        */
-    }
+    FowardsOrRetreat = "";//destructor for later push fowards or retreat
+    cout << "Knowing the dangers, you press on..." << endl;//placeholder
+    /*
+    first battle goes here
+    */
 return 0;
 }
