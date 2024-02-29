@@ -178,7 +178,7 @@ There are three getter and setter functions that will get/set the IGN (in game n
  
 **Weapon Class:** A small class that will represent the weapons that each character will carry. Each weapon will have a name, a damage value, and a specific class that can wield a given weapon. It will be implemented in the character class.
  
- > ## Phase III
+ ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
   
  > ## Final deliverable
