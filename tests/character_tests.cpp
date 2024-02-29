@@ -4,6 +4,7 @@
 #include "../header/thief.h"
 #include "../header/goblin.h"
 #include "../header/archer.h"
+#include "../header/warrior.h"
 
 TEST(swordTest, constructorTest)
 {
@@ -227,6 +228,89 @@ TEST(archerTest, windArrowTest)
 
     a.wind_arrow_strike(s);
     EXPECT_EQ(s.get_health(), 20);
+}
+//warrior tests
+
+TEST(warriorTest, getNameTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    EXPECT_EQ(w.get_name(), "Wallace");
+}
+
+TEST(warriorTest, setNameTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    w.set_name("Wallace");
+    EXPECT_EQ(w.get_name(), "Wallace");
+}
+
+TEST(warriorTest, getRaceTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    EXPECT_EQ(w.get_race(), "human");
+}
+
+TEST(warriorTest, setRaceTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    w.set_race("Melee Human");
+    EXPECT_EQ(w.get_race(), "Melee Human");
+}
+
+TEST(warriorTest, getHealthTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    EXPECT_EQ(w.get_health(), 105);
+}
+
+TEST(warriorTest, setHealthTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    w.set_health(0);
+    EXPECT_EQ(w.get_health(), 0);
+}
+
+TEST(warriorTest, getClassTest)
+{
+    Weapon scythe("Scythe", 25, character_class::WARRIOR);
+    Warrior w("Wallace", "human", 105, scythe);
+    EXPECT_EQ(w.get_class_type(), character_class::WARRIOR);
+}
+
+TEST(warriorTest, swingSwordTest)
+{
+    Weapon scythe("Scythe", 25, character_class::ENEMY);
+    Warrior w("Wallace", "human", 105, scythe);
+    Skeleton s("Jim", "monster", 50, scythe);
+
+    w.swing_sword(s);
+    EXPECT_EQ(s.get_health(), 25);
+}
+
+TEST(warriorTest, flameStrikeTest)
+{
+    Weapon scythe("Scythe", 25, character_class::ENEMY);
+    Warrior w("Wallace", "human", 105, scythe);
+    Skeleton s("Jim", "monster", 50, scythe);
+
+    w.flame_strike(s);
+    EXPECT_EQ(s.get_health(), 0);
+}
+
+TEST(warriorTest, throwBombTest)
+{
+    Weapon scythe("Scythe", 25, character_class::ENEMY);
+    Warrior w("Wallace", "human", 105, scythe);
+    Skeleton s("Jim", "monster", 50, scythe);
+
+    w.throw_bomb();
+    EXPECT_EQ(s.get_health(), 30);
 }
 
 // tests for get_name function
