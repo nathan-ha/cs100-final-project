@@ -3,6 +3,7 @@
 #include "../header/skeleton.h"
 #include "../header/thief.h"
 #include "../header/goblin.h"
+#include "../header/archer.h"
 
 TEST(swordTest, constructorTest)
 {
@@ -154,7 +155,79 @@ TEST(thiefTest, mirageStepTest)
     t.disable_mirage_step();
     EXPECT_EQ(t.get_is_invulnerable(), false);
 }
+// tests for archer class
 
+TEST(archerTest, getNameTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    EXPECT_EQ(a.get_name(), "Alice");
+}
+
+TEST(archerTest, setNameTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    a.set_name("Alice");
+    EXPECT_EQ(a.get_name(), "Alice");
+}
+
+TEST(archerTest, getRaceTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    EXPECT_EQ(a.get_race(), "human");
+}
+
+TEST(archerTest, setRaceTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    a.set_race("Ranged Human");
+    EXPECT_EQ(a.get_race(), "Ranged Human");
+}
+
+TEST(archerTest, getHealthTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    EXPECT_EQ(a.get_health(), 101);
+}
+
+TEST(archerTest, setHealthTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    a.set_health(0);
+    EXPECT_EQ(a.get_health(), 0);
+}
+
+TEST(archerTest, getClassTest)
+{
+    Weapon bow("Bow", 35, character_class::ARCHER);
+    Archer a("Alice", "human", 101, bow);
+    EXPECT_EQ(a.get_class_type(), character_class::ARCHER);
+}
+
+TEST(archerTest, shootArrowTest)
+{
+    Weapon bow("Bow", 35, character_class::ENEMY);
+    Archer a("Alice", "human", 101, bow);
+    Skeleton s("Jim", "monster", 70, bow);
+
+    a.shoot_arrow(s);
+    EXPECT_EQ(s.get_health(), 35);
+}
+
+TEST(archerTest, windArrowTest)
+{
+    Weapon bow("Bow", 35, character_class::ENEMY);
+    Archer a("Alice", "human", 101, bow);
+    Skeleton s("Jim", "monster", 70, bow);
+
+    a.wind_arrow_strike(s);
+    EXPECT_EQ(s.get_health(), 20);
+}
 
 // tests for get_name function
 TEST(NameSuite, correctName) { // tests set_name(string) function too
