@@ -7,5 +7,10 @@ add_executable(runAllTests
   character_tests.cpp
 )
 
+add_executable(runLazyTests
+  lazy_main.cpp
+)
+
 target_link_libraries(runAllTests gmock gtest gtest_main)
 target_link_libraries(runAllTests simpleLibrary)
+target_link_libraries(runLazyTests simpleLibrary)

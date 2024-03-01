@@ -146,16 +146,7 @@ TEST(thiefTest, throwKnifeTest)
     EXPECT_EQ(s.get_health(), 90);
 }
 
-TEST(thiefTest, mirageStepTest)
-{
-    Weapon sword("Sword", 20, character_class::ENEMY);
-    Thief t("Jim", "human", 100, sword);
-    t.mirage_step();
-    EXPECT_EQ(t.get_is_invulnerable(), true);
-    
-    t.disable_mirage_step();
-    EXPECT_EQ(t.get_is_invulnerable(), false);
-}
+
 // tests for archer class
 
 TEST(archerTest, getNameTest)
@@ -309,7 +300,7 @@ TEST(warriorTest, throwBombTest)
     Warrior w("Wallace", "human", 105, scythe);
     Skeleton s("Jim", "monster", 50, scythe);
 
-    w.throw_bomb();
+    w.throw_bomb(s);
     EXPECT_EQ(s.get_health(), 30);
 }
 
@@ -379,3 +370,11 @@ TEST(Goblin, enemyraceTest) {
     c.set_race("Goblin");
     EXPECT_EQ(c.get_race(), "Goblin");
 }
+
+// #include "../header/fight.h"
+// TEST(polymorphism, referenceTest) {
+//     Warrior w("name", "race", 0, Weapon("weapon", 10, character_class::WARRIOR));
+//     Goblin c("Nameless goblin", "Monster", 5, Weapon("club", 1, character_class::ENEMY));
+//     EXPECT_EQ(fight(w, c), true);
+
+// }

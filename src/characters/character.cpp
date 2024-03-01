@@ -36,3 +36,12 @@ character_class Character::get_class_type()
 {
     return current_weapon.class_type;
 }
+
+Weapon& Character::get_weapon()
+{
+    return current_weapon;
+}
+void Character::set_weapon(Weapon &w)
+{
+    current_weapon = w;
+}

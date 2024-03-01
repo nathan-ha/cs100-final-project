@@ -5,6 +5,7 @@ using namespace std;
 #include "../header/skeleton.h"
 #include "../header/thief.h"
 #include "../header/goblin.h"
+#include "../header/fight.h" // terrible for debugging purposes
 
 // TODO: hard code damage? or randomize
 /* 
@@ -13,8 +14,11 @@ using namespace std;
      cmake . && make && ./bin/runAllTests
     note: run build with 
      cmake . && make && ./bin/runBuild
+    note: if want to see results but you're too lazy to write tests, use lazy main
+     cmake . && make && ./bin/runLazyTests
     
 */
+
 
 int main() {
     /*since the player can choose when to quit, will we implement some sort of loop?

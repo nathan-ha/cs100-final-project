@@ -18,15 +18,21 @@ void Warrior::swing_sword(Character &target)
 
 void Warrior::flame_strike(Character &target)
 {
-    int dmg_amount = 50; // might need balancing
+    int dmg_amount = current_weapon.damage * 2; // might need balancing
     int target_new_health = target.get_health() - dmg_amount;
     target.set_health(target_new_health);
 }
 
-void Warrior::throw_bomb()
+void Warrior::throw_bomb(Character &target)
 {
-    if (bomb_count > 0)
-    {
-        cout << "bomb has been planted" << endl;
-    }
+
+    int dmg_amount = current_weapon.damage * 6;
+    int target_new_health = target.get_health() - dmg_amount;
+    target.set_health(target_new_health);
+    bomb_count--;
+}
+
+int Warrior::get_bomb_count()
+{
+    return bomb_count;
 }
