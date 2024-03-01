@@ -10,5 +10,7 @@ public:
     Warrior(const string &name, const string &race, int health, const Weapon &current_weapon);
     void swing_sword(Character &target);
     void flame_strike(Character &target);
-    void throw_bomb();
+    void throw_bomb(Character &target);
+    int get_bomb_count();
+    void set_bomb_count(int count);
 };

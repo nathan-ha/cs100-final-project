@@ -41,4 +41,10 @@ public:
     void run_away();
     character_class get_class_type();
 
+    Weapon& get_weapon();
+    void set_weapon(Weapon &w);
+
+    virtual ~Character() = default;
+    virtual void attack(Character &target) {} // for enemeies
+
 };
