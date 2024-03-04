@@ -5,7 +5,9 @@ using namespace std;
 #include "../header/skeleton.h"
 #include "../header/thief.h"
 #include "../header/goblin.h"
-#include "../header/fight.h" // terrible for debugging purposes
+#include "../header/fight.h"
+
+void wait_for_user();
 
 // TODO: hard code damage? or randomize
 /* 
@@ -406,4 +408,15 @@ int main() {
     }   
 
     return 0;
+}
+
+
+void wait_for_user();
+{
+    cout << "\n<Press enter to continue..>.\n";
+    while (1)
+    {
+        string s;
+        if (getline(cin, s)) return;
+    }
 }
