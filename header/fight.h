@@ -16,7 +16,7 @@ using std::cin;
 // yeah just #include this file into main
 
 // return true when enemy was defeated, false for flee
-bool fight(Character &player, Character &enemy)
+bool fight(Character& player, Character &enemy)
 {
     cout << "A wild " + enemy.get_race() + " appeared!\n"
          << "The enemy has " << enemy.get_health() << " health\n";

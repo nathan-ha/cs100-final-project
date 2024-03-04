@@ -10,161 +10,226 @@ using namespace std;
 void wait_for_user();
 
 // TODO: hard code damage? or randomize
-/* 
+/*
     note: make sure to add new .cpp files to ~/src/CMakeLists.txt under add_library
-    note: run tests with 
+    note: run tests with
      cmake . && make && ./bin/runAllTests
-    note: run build with 
+    note: run build with
      cmake . && make && ./bin/runBuild
     note: if want to see results but you're too lazy to write tests, use lazy main
      cmake . && make && ./bin/runLazyTests
-    
+
 */
 
-
-int main() {
+int main()
+{
     /*since the player can choose when to quit, will we implement some sort of loop?
-    or will we implement some sorta function that we pass in the input in for every action */ 
+    or will we implement some sorta function that we pass in the input in for every action */
     Weapon playerweapon("", 0, WARRIOR);
+    Character *player = nullptr;
 
-    cout << endl << endl << "Welcome adventurer, to His majeasty's DragonSlayer's Quest" << endl;
+    cout << endl
+         << endl
+         << "Welcome adventurer, to His majeasty's DragonSlayer's Quest" << endl;
     cout << "His majeasty's sacred treasure has been stolen by the mythical dragon king from the northern mountains" << endl;
     cout << "He beeseaches you to venture into his deen to kill the dragon king and reclaim his sacred treasure that has been lost" << endl;
     cout << "The King will reward you handsomely should you complete this quest!" << endl;
-    cout << "Now adventurer, state your name and let your name be inscribbed to the records" << endl << endl;
+    cout << "Now adventurer, state your name and let your name be inscribbed to the records" << endl
+         << endl;
+
+    wait_for_user();
 
     // Player's name input
     string playername, playerclass, userchoice;
 
     cout << "Enter your name: ";
     cin >> playername;
-    if(playername == "q" || playername == "Q"){
+    if (playername == "q" || playername == "Q")
+    {
         cout << "Farewell unknown Adventurer." << endl;
+        delete player;
         return 0; // Exit the game
     }
-    
-    cout << endl << "Very well Adventurer " << playername << ", The guild under the king's authority has presented you with 3 classes" << endl;
-    cout << "Please review each class and pick one of the 3 classes" << endl << endl;
+
+    cout << endl
+         << "Very well Adventurer " << playername << ", The guild under the king's authority has presented you with 3 classes" << endl;
+    cout << "Please review each class and pick one of the 3 classes" << endl
+         << endl;
+
+    wait_for_user();
 
     cout << "------------------------------------------" << endl;
-    cout << "1.WARRIOR - High base HP" << endl << "Physical attack - sword swing" << endl << "Special attack - Flame Strike (fire elemental damage skill: does small damage per turn for x turns)" << endl;
-    cout << "2.ARCHER - Normal base HP" << endl << "Physical attack - shoot arrow" << endl << "Special attack - Wind Arrow (wind elemental damage skill: damage multiplier towards base attack)" << endl;
-    cout << "3.THIEF - Low base HP" << endl << "Physical attack - stab" << endl << "Special attack - Mirage Step (water elemental evasive skill: dodge skill for 1-2 turns)" << endl;
+    cout << "1.WARRIOR - High base HP" << endl
+         << "Physical attack - sword swing" << endl
+         << "Special attack - Flame Strike (fire elemental damage skill: does small damage per turn for x turns)" << endl;
+    cout << "2.ARCHER - Normal base HP" << endl
+         << "Physical attack - shoot arrow" << endl
+         << "Special attack - Wind Arrow (wind elemental damage skill: damage multiplier towards base attack)" << endl;
+    cout << "3.THIEF - Low base HP" << endl
+         << "Physical attack - stab" << endl
+         << "Special attack - Mirage Step (water elemental evasive skill: dodge skill for 1-2 turns)" << endl;
     cout << "------------------------------------------" << endl;
-    cout << "What is your class?" << endl << "(Choose from Warrior, Archer, or Thief)" << endl << endl;
+    cout << "What is your class?" << endl
+         << "(Choose from Warrior, Archer, or Thief)" << endl
+         << endl;
 
     cin >> playerclass;
-    if (playerclass == "q" || playerclass == "Q") {//repeat this chunck for player's options
+    if (playerclass == "q" || playerclass == "Q")
+    { // repeat this chunck for player's options
         cout << "Farewell Adventurer" << endl;
-        return 0; // Exit the game 
+        delete player;
+        return 0; // Exit the game
     }
+
     bool failcheck = true;
-    while(failcheck == true){
-        if(playerclass == "Warrior" || playerclass == "warrior" || playerclass == "w" || playerclass == "W"){
+    while (failcheck == true)
+    {
+        if (playerclass == "Warrior" || playerclass == "warrior" || playerclass == "w" || playerclass == "W")
+        {
             playerclass = "Warrior";
             playerweapon = Weapon("Sword", 5, WARRIOR);
-            Character player(playername, "Human", 200, playerweapon);
-            cout << endl << endl;
-            cout << "Welcome, " << player.get_race() << " " << playerclass << " " << player.get_name() << " your name has been recorded" << endl;
-            cout << "As a " << playerclass << ", Your base HP is " << player.get_health() << endl;
-            cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl << endl;
-            failcheck = false;//not sure if i should use break instead
-            //maybe replace playerclass with player.get_class_type() later?
+            player = new Warrior(playername, "Human", 200, playerweapon);
+            cout << endl
+                 << endl;
+            cout << "Welcome, " << player->get_race() << " " << playerclass << " " << player->get_name() << " your name has been recorded" << endl;
+            cout << "As a " << playerclass << ", Your base HP is " << player->get_health() << endl;
+            cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl
+                 << endl;
+            failcheck = false; // not sure if i should use break instead
+            // maybe replace playerclass with player->get_class_type() later?
         }
-        else if(playerclass == "Archer" || playerclass == "archer" || playerclass == "a" || playerclass == "A"){
+        else if (playerclass == "Archer" || playerclass == "archer" || playerclass == "a" || playerclass == "A")
+        {
             playerclass = "Archer";
             playerweapon = Weapon("Bow", 5, ARCHER);
-            Character player(playername, "Human", 100, playerweapon);
-            cout << endl << endl;
-            cout << "Welcome, " << player.get_race() << " " << playerclass << " " << player.get_name() << " your name has been recorded" << endl;
-            cout << "As a " << playerclass << ", Your base HP is " << player.get_health() << endl;
-            cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl << endl;
+            player = new Archer(playername, "Human", 100, playerweapon);
+            cout << endl
+                 << endl;
+            cout << "Welcome, " << player->get_race() << " " << playerclass << " " << player->get_name() << " your name has been recorded" << endl;
+            cout << "As a " << playerclass << ", Your base HP is " << player->get_health() << endl;
+            cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl
+                 << endl;
             failcheck = false;
-
         }
-        else if(playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T"){
+        else if (playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T")
+        {
             playerclass = "Thief";
             playerweapon = Weapon("Dagger", 5, THIEF);
-            Character player(playername, "Human", 75, playerweapon);
-            cout << endl << endl;
-            cout << "Welcome, " << player.get_race() << " " << playerclass << " " << player.get_name() << " your name has been recorded" << endl;
-            cout << "As a " << playerclass << ", Your base HP is " << player.get_health() << endl;
-            cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl << endl;
+            player = new Thief(playername, "Human", 75, playerweapon);
+            cout << endl
+                 << endl;
+            cout << "Welcome, " << player->get_race() << " " << playerclass << " " << player->get_name() << " your name has been recorded" << endl;
+            cout << "As a " << playerclass << ", Your base HP is " << player->get_health() << endl;
+            cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl
+                 << endl;
             failcheck = false;
         }
-        else{
-            cout << "Wrong class!"<< endl << "Choose your class" << endl;
+        else
+        {
+            cout << "Wrong class!" << endl
+                 << "Choose your class" << endl;
             cin >> playerclass;
         }
     }
+
+    wait_for_user();
+
     cout << "You set off on your adventure..." << endl;
     cout << "You exit the castle walls and enter the plains, it is known that goblins and skeletons freqently roam this area" << endl;
-    cout << "Press onwards or turn back now?" << endl << "> press anykey to press on" << endl << "> n/N or q/Q for retreat" << endl << endl;
+    cout << "Press onwards or turn back now?" << endl
+         << "> press anykey to press on" << endl
+         << "> n/N or q/Q for retreat" << endl
+         << endl;
     cin >> userchoice;
-    if (userchoice == "n" || userchoice == "N" || userchoice == "q" || userchoice == "Q") {
-        cout << "Farewell Adventurer." << endl;//placeholder for now
+    if (userchoice == "n" || userchoice == "N" || userchoice == "q" || userchoice == "Q")
+    {
+        cout << "Farewell Adventurer." << endl; // placeholder for now
+        delete player;
         return 0; // Exit the game
     }
-    userchoice = "";//destructor for later push fowards or retreat
-    cout << endl << "Knowing the dangers, you press on..." << endl;//placeholder
+    userchoice = ""; // destructor for later push fowards or retreat
+    cout << endl
+         << "Knowing the dangers, you press on..." << endl; // placeholder
     cout << "Stepping into the field, you part the tall grass and plants to continue forth" << endl;
     cout << "You encounter a clearing where you encounter a goblin" << endl;
+
+    wait_for_user();
+
     /*
     first battle goes here
     */
     cout << "After a grueling battle, you emerge victorious" << endl;
     cout << "As you Catch your breath, you notice a fork in the road ahead..." << endl;
     cout << "Do you wish to continue through the fields or brave through the step cliffs towards the mountains?" << endl;
-    cout << "> M for the mountain cliffs" << endl << "> F for fields" << endl << "> Q to retreat" << endl << endl;
+    cout << "> M for the mountain cliffs" << endl
+         << "> F for fields" << endl
+         << "> Q to retreat" << endl
+         << endl;
     cin >> userchoice;
-    if(userchoice == "f" || userchoice == "F"){
+    if (userchoice == "f" || userchoice == "F")
+    {
         userchoice == "";
-        cout << endl << "You decide to further venture into the fields" << endl;
+        cout << endl
+             << "You decide to further venture into the fields" << endl;
         cout << "As you walk along the beaten path, the fields turn into a dark forest" << endl;
         cout << "The Next thing you know, night has befallen on you and you are feeling tired" << endl;
         cout << "you decide on whether to make camp for the night or push on in the dark" << endl;
         cout << "> press any key except W or Q to make camp and rest the night" << endl;
         cout << "> press W to continue your journey at night" << endl;
-        cout << "> press Q to quit" << endl << endl;
+        cout << "> press Q to quit" << endl
+             << endl;
         cin >> userchoice;
-        if(userchoice == "W" || userchoice == "w"){
+        if (userchoice == "W" || userchoice == "w")
+        {
             userchoice = "";
             cout << "You decide to trek on in the middle of the night..." << endl;
             cout << "As you do, the forest is pitch black and you are unable to see anyfurther than whats directly infront of you" << endl;
             cout << "Suddenly you get amushed by a skeleton from the back, and the next thing you know you are dead" << endl;
             cout << "GAME OVER" << endl;
+            delete player;
             return 0;
         }
-        else if(userchoice == "Q" || userchoice == "q"){
+        else if (userchoice == "Q" || userchoice == "q")
+        {
             userchoice = "";
-            cout << "you have deserted the quest..." << endl << "A bounty has been place on your head!" << endl;
+            cout << "you have deserted the quest..." << endl
+                 << "A bounty has been place on your head!" << endl;
+            delete player;
             return 0;
         }
         userchoice = "";
         cout << "You decide to rest the night..." << endl;
         cout << "You wake up the next morning feeling alert" << endl;
         cout << "feeling energetic you sense danger behind you as a skeleton approaches you from behind" << endl;
-        cout << "> fight? (F)" << endl << "> flee(R)" << endl << endl;
+        cout << "> fight? (F)" << endl
+             << "> flee(R)" << endl
+             << endl;
         cin >> userchoice;
-        if(userchoice == "F" || userchoice == "f"){
+        if (userchoice == "F" || userchoice == "f")
+        {
             userchoice = "";
-            cout << " " << endl;//continue story
+            cout << " " << endl; // continue story
         }
-        else if(userchoice == "R" || userchoice == "r"){
-            cout << endl << "Sparked by your fears of skeletons, you decide to flee" << endl;
+        else if (userchoice == "R" || userchoice == "r")
+        {
+            cout << endl
+                 << "Sparked by your fears of skeletons, you decide to flee" << endl;
             cout << "As you run through the thick forest, you fall into a boobytrap laid out by the hunters of a different party and become unable to move" << endl;
             cout << "You turn around and you see that same skeleton that approached you earlier is not looming over you, sword in hand as it kills you off" << endl;
             cout << "due to some magic imbedded in the sword, you now become a undead, cursed to wander the lands..." << endl;
             cout << "GAME OVER" << endl;
             userchoice = "";
-            return 0;//game over
+            delete player;
+            return 0; // game over
         }
-        else{
+        else
+        {
             userchoice = "";
             cout << "Wrong input!" << endl;
             cout << "you have hesitated and was stabbed to death by skeleton" << endl;
             cout << "due to some magic imbedded in the sword, you now become a undead, cursed to wander the lands..." << endl;
             cout << "GAME OVER" << endl;
+            delete player;
             return 0;
         }
         /*
@@ -179,36 +244,54 @@ int main() {
         cout << "While resting, you encounter a pack of wolves on their return trip from their hunt, and they look angry that" << endl;
         cout << "You have decided to make their home a resting spot" << endl;
         cout << "With your back against the cave wall, You have no choice but to engage in a fight head on" << endl;
+
+        wait_for_user();
+
         /*
         wolf fight goes here
         */
         cout << "After a grueling battle, you emerge victorious as you finally get your rest" << endl;
         cout << "An hour later, you finally muster the strength to pull yourself together and decide on whether to open the chest or not" << endl;
-        cout << "Open chest?" << endl << "> Yes (Y)" << endl << "> No (N)" << endl << endl;
+        cout << "Open chest?" << endl
+             << "> Yes (Y)" << endl
+             << "> No (N)" << endl
+             << endl;
         cin >> userchoice;
-        if(userchoice == "Y" || userchoice == "y"){
+        if (userchoice == "Y" || userchoice == "y")
+        {
             userchoice = "";
             cout << "You open the chest, and find a map inside." << endl;
             cout << "It leads to directions to the dragon's lair!" << endl;
             cout << "Proceed with the map's directions?" << endl;
-            cout << "> Yes (Y)" << endl << "> No (N)" << endl << endl;
+            cout << "> Yes (Y)" << endl
+                 << "> No (N)" << endl
+                 << endl;
             cin >> userchoice;
-            if(userchoice == "Y" || userchoice == "y"){
-                userchoice ="";
+            if (userchoice == "Y" || userchoice == "y")
+            {
+                userchoice = "";
                 cout << "You continue down the cave's path, carefully following the directions." << endl;
                 cout << "A strange smell permeates the area, so you rush ahead. Soon, you encounter a door. Open ?" << endl;
-                cout << "> Yes (Y)" << endl << "> No (N)" << endl << endl;
+                cout << "> Yes (Y)" << endl
+                     << "> No (N)" << endl
+                     << endl;
                 cin >> userchoice;
-                if(userchoice == "n" || userchoice == "N"){
+                if (userchoice == "n" || userchoice == "N")
+                {
                     userchoice = "";
                     cout << "Leaving the door unopened, you succumb to the toxic fumes." << endl;
                     cout << "GAME OVER" << endl;
+                    delete player;
                     return 0;
                 }
-                else if(userchoice == "Y" || userchoice == "y"){
+                else if (userchoice == "Y" || userchoice == "y")
+                {
                     userchoice = "";
                     cout << "you barge through the door and you are face to face with more monsters" << endl;
                     cout << "No where to go, you are quickly forced into battle" << endl;
+
+                    wait_for_user();
+
                     /*
                     fight goes here
                     */
@@ -216,15 +299,19 @@ int main() {
                     cout << "unsure whats behind the door, you take a peek through the tiny cracks in the door" << endl;
                     cout << "you quickly realize this door leads to the dragon king's deen as you spot the dragon king laying ontop of a mountian of gold." << endl;
                     cout << "Are you ready?" << endl;
-                    cout << "> Yes(Y)" << endl << "> No(N)" << endl << endl;
+                    cout << "> Yes(Y)" << endl
+                         << "> No(N)" << endl
+                         << endl;
                     cin >> userchoice;
-                    if(userchoice == "N" || userchoice == "n"){
+                    if (userchoice == "N" || userchoice == "n")
+                    {
                         cout << "Faced with a almighty dragon, fear takes over you and you flee" << endl;
                         cout << "The dragon sensing that someone was at the door that wasnt his guards mocks you a you run away" << endl;
                         cout << "'HAHAHAHA COWARD!'" << endl;
                         cout << "GAME OVER" << endl;
                     }
-                    else if(userchoice == "Y" || userchoice == "y"){
+                    else if (userchoice == "Y" || userchoice == "y")
+                    {
                         cout << "you open the door, and suddenly a loud voice booms the room..." << endl;
                         cout << "'WHO DARES WAKE ME FROM MY SLUMBER'" << endl;
                         /*
@@ -233,88 +320,119 @@ int main() {
                         cout << "You have emerged victorious! With the defeat of the dragon king and the reclamation of His Majesty's sacred treasure from the depths of the northern mountains, the quest is fulfilled." << endl;
                         cout << "You return to the castle to a hero's welcome" << endl;
                         cout << "VICTORY" << endl;
+                        delete player;
                         return 0;
                     }
-                    else{
+                    else
+                    {
                         cout << "Unsure what to do after seeing the dragon king, you dont flee nor fight" << endl;
                         cout << "However, with the dead dragon kings guard laying there, other guards have become alerted to your presense" << endl;
                         cout << "the next thing you know, you have become surrounded with both doors now locked" << endl;
                         cout << "you try your best to fight to stay alive, but their numbers are too much and you take a fatal blow" << endl;
                         cout << "Incapacitated, the dragon kings guards drag you to their king, and you become his lunch" << endl;
                         cout << "GAME OVER" << endl;
+                        delete player;
                         return 0;
                     }
                 }
-                else{
+                else
+                {
                     userchoice = "";
                     cout << "unsure what to do, you hesitate and succumb to the toxic fumes" << endl;
                     cout << "GAME OVER" << endl;
+                    delete player;
                     return 0;
                 }
             }
-            else{
-            //if(userchoice == "n" || userchoice == "N"){
+            else
+            {
+                // if(userchoice == "n" || userchoice == "N"){
                 userchoice = "";
                 cout << "Dwelling too long on the contents of the map, you dont notice a dark shadowy figure sneaking up on you." << endl;
                 cout << "the next thing you know, your on the floor bleeding out as you pass out" << endl;
                 cout << "GAME OVER" << endl;
+                delete player;
                 return 0;
             }
         }
-        else if(userchoice == "N" || userchoice == "n"){//chest prompt
+        else if (userchoice == "N" || userchoice == "n")
+        { // chest prompt
             userchoice = "";
             cout << "You decide against opening the chest, fearful of Mimics could posses unopened chests" << endl;
             cout << "You trek through the dark forest and soon there is a clearing." << endl;
             cout << "On the other side of the clearing, there is a small villave in the distanct" << endl;
             cout << "As you walk closer to the village, you see dark smoke rising from the village, it becomes apparent that the village is under attack" << endl;
             cout << "Go and assist the villagers? or turn the other way?" << endl;
-            cout << "> Assist (A)" << endl << "> Turn the other way(D)" << endl << endl;
+            cout << "> Assist (A)" << endl
+                 << "> Turn the other way(D)" << endl
+                 << endl;
             cin >> userchoice;
-            if(userchoice == "D" || userchoice == "d"){
+            if (userchoice == "D" || userchoice == "d")
+            {
                 userchoice = "";
                 cout << "Tring to turn the other way, a villager spots you fleeing and thinks you are the one behind the attack" << endl;
                 cout << "The scout relays information to other villagers and be have been branded a traitor to the kingdom" << endl;
                 cout << "Unbeingknownst to you, a hunting party has been set out to hunt you down" << endl;
                 cout << "An hour later after you flee the burning village, you are ambushed by the vengeful villagers and die" << endl;
                 cout << "GAME OVER" << endl;
+                delete player;
                 return 0;
             }
-            else if(userchoice == "A" || userchoice == "a"){
+            else if (userchoice == "A" || userchoice == "a")
+            {
                 userchoice = "";
-                cout << "You decide on helping the villagers..." << endl << "You draw your " << playerweapon.name << " and rush to the villagers aid" << endl;
+                cout << "You decide on helping the villagers..." << endl
+                     << "You draw your " << playerweapon.name << " and rush to the villagers aid" << endl;
                 cout << "Upon entering the village limits, you are face to face with a skeleton knight" << endl;
                 cout << "The villagers take note that you are not the one responsible for the attack on their home and have come to aid you in the ensuing battle." << endl;
+
+                wait_for_user();
+
                 /*
                 skeleton battle goes here (knight?)
                 */
                 cout << "Emerging victorious, the villagers welcome you with open arms" << endl;
                 cout << "For your reward for helping the villagers, they offer you to rest before you continue on your quest" << endl;
-                cout << "Thankful for the reward you decide to spend the night patching up your wounds" << endl << endl;
+                cout << "Thankful for the reward you decide to spend the night patching up your wounds" << endl
+                     << endl;
 
-                //set player health to 100% OR +50% to current hp if makeing back to 100% is too OP
-                
+                wait_for_user();
+
+                // set player health to 100% OR +50% to current hp if makeing back to 100% is too OP
+
                 cout << "While resting, you tell the villagers about your quest to slay the dragon king and return the king's sacred treasure" << endl;
                 cout << "The name of the Dragon King brings hushes the second you say the name dragon king" << endl;
                 cout << "it becomes apparent that this dragon king as been tormenting the local village for quite some time too" << endl;
                 cout << "Eager to help you, the villagers present you a map to where the dragon king resides" << endl;
-                cout << "shortly after the villagers knights return to their posts, and the others continue tending to the wounded as you make your way to your assigned cabin to rest the night" << endl << endl;
+                cout << "shortly after the villagers knights return to their posts, and the others continue tending to the wounded as you make your way to your assigned cabin to rest the night" << endl
+                     << endl;
+
+                wait_for_user();
 
                 cout << "The next morning, you set off to a hero's departure" << endl;
                 cout << "While enroute, to find that the map has avioded all the traps the villagers have placed leading up to the draon's deen." << endl;
                 cout << "Finally you come across a cave, where another skeleton knight stands guard" << endl;
                 cout << "Fight the skeleton knight guarding the entrance?" << endl;
-                cout << "> fight (F)" << endl << "> Flee (R)" << endl << endl;
+                cout << "> fight (F)" << endl
+                     << "> Flee (R)" << endl
+                     << endl;
                 cin >> userchoice;
-                if(userchoice == "R" || userchoice == "r"){
+                if (userchoice == "R" || userchoice == "r")
+                {
                     userchoice = "";
                     cout << "decidng that the knight was well to guarded you decide to turn the other way and venture off the marked path on the map." << endl;
                     cout << "You fall into a unmarked trap and die" << endl;
                     cout << "GAME OVER" << endl;
+                    delete player;
                     return 0;
                 }
-                else if(userchoice == "F" || userchoice == "f"){
+                else if (userchoice == "F" || userchoice == "f")
+                {
                     userchoice = "";
                     cout << "You draw your " << playerweapon.name << " and prepare for battle" << endl;
+
+                    wait_for_user();
+
                     /*
                     fight goes here
                     */
@@ -322,101 +440,126 @@ int main() {
                     cout << "unsure whats behind the door, you take a peek through the tiny cracks in the door" << endl;
                     cout << "you quickly realize this door leads to the dragon king's deen as you spot the dragon king laying ontop of a mountian of gold." << endl;
                     cout << "Are you ready?" << endl;
-                    cout << "> Yes(Y)" << endl << "> No(N)" << endl << endl;
+                    cout << "> Yes(Y)" << endl
+                         << "> No(N)" << endl
+                         << endl;
                     cin >> userchoice;
-                    if(userchoice == "N" || userchoice == "n"){
+                    if (userchoice == "N" || userchoice == "n")
+                    {
                         cout << "Faced with a almighty dragon, fear takes over you and you flee" << endl;
                         cout << "The dragon sensing that someone was at the door that wasnt his guards mocks you a you run away" << endl;
                         cout << "'HAHAHAHA COWARD!'" << endl;
                         cout << "GAME OVER" << endl;
                     }
-                    else if(userchoice == "Y" || userchoice == "y"){
-                        userchoice ="";
+                    else if (userchoice == "Y" || userchoice == "y")
+                    {
+                        userchoice = "";
                         cout << "you open the door, and suddenly a loud voice booms the room..." << endl;
                         cout << "'WHO DARES WAKE ME FROM MY SLUMBER'" << endl;
+
+                        wait_for_user();
+
                         /*
                         Dragon fight goes here
                         */
                         cout << "You have emerged victorious! With the defeat of the dragon king and the reclamation of His Majesty's sacred treasure from the depths of the northern mountains, the quest is fulfilled." << endl;
                         cout << "You return to the castle to a hero's welcome" << endl;
                         cout << "VICTORY" << endl;
+                        delete player;
                         return 0;
                     }
-                    else{
-                        userchoice ="";
+                    else
+                    {
+                        userchoice = "";
                         cout << "Unsure what to do after seeing the dragon king, you dont flee nor fight" << endl;
                         cout << "However, with the dead dragon kings guard laying there, other guards have become alerted to your presense" << endl;
                         cout << "the next thing you know, you have become surrounded with both doors now locked" << endl;
                         cout << "you try your best to fight to stay alive, but their numbers are too much and you take a fatal blow" << endl;
                         cout << "Incapacitated, the dragon kings guards drag you to their king, and you become his lunch" << endl;
                         cout << "GAME OVER" << endl;
+                        delete player;
                         return 0;
                     }
                 }
-                else{
+                else
+                {
                     userchoice = "";
                     cout << "unsure what to do, you hesitate and other patroling skeleton guards ambush you from behind" << endl;
                     cout << "GAME OVER" << endl;
+                    delete player;
                     return 0;
                 }
             }
-            else{//wrong key for village scene
-                userchoice ="";
+            else
+            { // wrong key for village scene
+                userchoice = "";
                 cout << "Hesitating for too long, you get ambushed by a hungry vengeful lone wolf" << endl;
                 cout << "You try to fend it off as best as you can, but this lone wolf has nothing else left to lose and comes at you relentlessly." << endl;
                 cout << "You get overpowered by the wolf and become it's dinner" << endl;
                 cout << "GAME OVER" << endl;
+                delete player;
                 return 0;
-
             }
+            delete player;
             return 0;
         }
     }
-    else if (userchoice == "M" || userchoice == "m"){//path prompt
+    else if (userchoice == "M" || userchoice == "m")
+    { // path prompt
         userchoice = "";
-        cout << "You choose to brave the treacherous mountain pass, hoping for a faster route." << endl;    
+        cout << "You choose to brave the treacherous mountain pass, hoping for a faster route." << endl;
         cout << "However it is found to be a more treacherous as the entire right flank of the path is a bottomless fall" << endl;
         cout << "As you make your way up the mountain, the dragon king flies right by you creating hurrticane winds" << endl;
-        cout << "> Grab onto something (S)" << endl << "> Stand your ground as best you can (W)" << endl;
+        cout << "> Grab onto something (S)" << endl
+             << "> Stand your ground as best you can (W)" << endl;
         cin >> userchoice;
-        if (userchoice == "W" || userchoice == "w"){//cliff side prompt
+        if (userchoice == "W" || userchoice == "w")
+        { // cliff side prompt
             userchoice = "";
             cout << "You try to stand your ground, but the winds are too strong as you are thrown down the bottomless cliff" << endl;
             cout << "You fall for a agnozing 40 seconds before you hit the ground and die" << endl;
             cout << "GAME OVER" << endl;
+            delete player;
             return 0;
         }
-        else if (userchoice == "S" || userchoice == "s"){//cliffside stand
+        else if (userchoice == "S" || userchoice == "s")
+        { // cliffside stand
             cout << "You stand your ground, however the dragon notices you, and you are forced to fight for your life" << endl;
+
+            wait_for_user();
             /*
             set player HP to 30% of current or base HP
             this fight is meant to be a impossible fight
             */
             cout << "Faced with no other choice, you draw your " << playerweapon.name << " and commence battle" << endl;
+
+            wait_for_user();
+
             /*
             impossible dragon fight goes here --> GAME OVER
             */
         }
-        else{
-            userchoice ="";
+        else
+        {
+            userchoice = "";
             cout << "You hesistate, and the strong winds push you off the mountain" << endl;
             cout << "You fall for a agnozing 40 seconds before you hit the ground and die" << endl;
             cout << "GAME OVER" << endl;
+            delete player;
             return 0;
         }
+        delete player;
         return 0;
-    }   
+    }
 
+    delete player;
     return 0;
 }
 
-
-void wait_for_user();
+void wait_for_user()
 {
-    cout << "\n<Press enter to continue..>.\n";
-    while (1)
-    {
-        string s;
-        if (getline(cin, s)) return;
-    }
+    cout << "\nPress any key to continue...\n";
+    string s;
+    system("read"); // only works on linux/mac
+    // system("pause"); // only works on windows
 }
