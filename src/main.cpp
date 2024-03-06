@@ -6,6 +6,7 @@ using namespace std;
 #include "../header/thief.h"
 #include "../header/goblin.h"
 #include "../header/fight.h"
+#include "../header/wolf.h"
 
 void wait_for_user();
 
@@ -305,10 +306,13 @@ int main()
                     cin >> userchoice;
                     if (userchoice == "N" || userchoice == "n")
                     {
+                        userchoice = "";
                         cout << "Faced with a almighty dragon, fear takes over you and you flee" << endl;
                         cout << "The dragon sensing that someone was at the door that wasnt his guards mocks you a you run away" << endl;
                         cout << "'HAHAHAHA COWARD!'" << endl;
                         cout << "GAME OVER" << endl;
+                        delete player;
+                        return 0;
                     }
                     else if (userchoice == "Y" || userchoice == "y")
                     {
@@ -446,10 +450,13 @@ int main()
                     cin >> userchoice;
                     if (userchoice == "N" || userchoice == "n")
                     {
+                        userchoice = "";
                         cout << "Faced with a almighty dragon, fear takes over you and you flee" << endl;
                         cout << "The dragon sensing that someone was at the door that wasnt his guards mocks you a you run away" << endl;
                         cout << "'HAHAHAHA COWARD!'" << endl;
                         cout << "GAME OVER" << endl;
+                        delete player;
+                        return 0;
                     }
                     else if (userchoice == "Y" || userchoice == "y")
                     {
