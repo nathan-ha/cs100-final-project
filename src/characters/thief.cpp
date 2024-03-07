@@ -19,6 +19,7 @@ void Thief::throw_knife(Character &target)
     int dmg_amount = current_weapon.damage * 2;
     int target_new_health = target.get_health() - dmg_amount;
     target.set_health(target_new_health);
+    throwing_knife_count--;
 }
 
 int Thief::get_throwing_knife_count()

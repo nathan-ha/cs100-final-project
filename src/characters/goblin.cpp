@@ -6,7 +6,7 @@ Goblin::Goblin(const string &name, const string &race, int health, const Weapon 
 }
 void Goblin::attack(Character &target)
 {
-    int dmg_amount = 5;
+    int dmg_amount = current_weapon.damage;
     int target_new_health = target.get_health() - dmg_amount;
     target.set_health(target_new_health);
 }
