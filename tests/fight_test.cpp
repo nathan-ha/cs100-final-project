@@ -76,6 +76,23 @@ TEST(FightTest, ThiefDefeatsWolf) {
     EXPECT_LT(player.get_throwing_knife_count(), 1);
 }
 
+TEST(FightTest, PlayerDiesInFight) {
+    Warrior player("John", "Human", 30, Weapon("Sword", 0, WARRIOR)); // Low health
+    Goblin enemy("Goblin", "Monster", 50, Weapon("Club", 8, ENEMY));
+    // Simulate player input for multiple rounds
+    std::string input;
+    for (int i = 0; i < 100; ++i) {
+        input += "a\n"; // Attack
+    }
+    std::istringstream iss(input); // Simulate user input
+    std::ostringstream oss; // Capture fight output
+    bool result = fight(player, enemy, iss, oss); 
+    EXPECT_FALSE(result); // Player should not defeat the enemy
+    EXPECT_TRUE(player.get_health() <= 0); // Player should be defeated
+    std::string fight_log = oss.str();
+    EXPECT_TRUE(fight_log.find("You died!") != std::string::npos);
+}
+
 
 // Test when player flees from the fight
 TEST(FightTest, PlayerFlees) {
