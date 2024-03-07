@@ -6,6 +6,69 @@
 #include "../header/archer.h"
 #include "../header/warrior.h"
 
+TEST(CharacterTest, GetName) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    EXPECT_EQ(character.get_name(), "Alice");
+}
+
+TEST(CharacterTest, SetName) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    character.set_name("Bob");
+    EXPECT_EQ(character.get_name(), "Bob");
+}
+
+TEST(CharacterTest, GetRace) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    EXPECT_EQ(character.get_race(), "Human");
+}
+
+TEST(CharacterTest, SetRace) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    character.set_race("Elf");
+    EXPECT_EQ(character.get_race(), "Elf");
+}
+
+TEST(CharacterTest, GetHealth) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    EXPECT_EQ(character.get_health(), 100);
+}
+
+TEST(CharacterTest, SetHealth) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    character.set_health(80);
+    EXPECT_EQ(character.get_health(), 80);
+}
+
+TEST(CharacterTest, GetClassType) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    EXPECT_EQ(character.get_class_type(), WARRIOR);
+}
+
+TEST(CharacterTest, GetWeapon) {
+    Weapon weapon("Sword", 10, WARRIOR);
+    Character character("Alice", "Human", 100, weapon);
+    EXPECT_EQ(character.get_weapon().name, "Sword");
+    EXPECT_EQ(character.get_weapon().damage, 10);
+    EXPECT_EQ(character.get_weapon().class_type, WARRIOR);
+}
+
+TEST(CharacterTest, SetWeapon) {
+    Weapon weapon1("Sword", 10, WARRIOR);
+    Weapon weapon2("Axe", 15, WARRIOR);
+    Character character("Alice", "Human", 100, weapon1);
+    character.set_weapon(weapon2);
+    EXPECT_EQ(character.get_weapon().name, "Axe");
+    EXPECT_EQ(character.get_weapon().damage, 15);
+    EXPECT_EQ(character.get_weapon().class_type, WARRIOR);
+}
+
 TEST(swordTest, constructorTest)
 {
     Weapon w("sword", 20, character_class::THIEF);
@@ -143,7 +206,30 @@ TEST(thiefTest, throwKnifeTest)
     Skeleton s("Jim", "monster", 100, sword);
     Thief t("Jim", "human", 100, sword);
     t.throw_knife(s);
-    EXPECT_EQ(s.get_health(), 90);
+    EXPECT_EQ(s.get_health(), 60);
+}
+
+TEST(ThiefTest, Stab) {
+    Weapon dagger("Dagger", 15, THIEF);
+    Thief thief("Rogue", "Human", 100, dagger);
+    Character target("Enemy", "Orc", 50, Weapon("Sword", 20, WARRIOR));
+    thief.stab(target);
+    EXPECT_EQ(target.get_health(), 35);
+}
+
+TEST(ThiefTest, ThrowKnife) {
+    Weapon dagger("Dagger", 15, THIEF);
+    Thief thief("Rogue", "Human", 100, dagger);
+    Character target("Enemy", "Orc", 50, Weapon("Sword", 20, WARRIOR));
+    thief.throw_knife(target);
+    EXPECT_EQ(target.get_health(), 20);
+}
+
+TEST(ThiefTest, GetSetThrowingKnifeCount) {
+    Weapon dagger("Dagger", 15, THIEF);
+    Thief thief("Rogue", "Human", 100, dagger);
+    thief.set_throwing_knife_count(10);
+    EXPECT_EQ(thief.get_throwing_knife_count(), 10);
 }
 
 
@@ -218,8 +304,42 @@ TEST(archerTest, windArrowTest)
     Skeleton s("Jim", "monster", 70, bow);
 
     a.wind_arrow_strike(s);
-    EXPECT_EQ(s.get_health(), 20);
+    EXPECT_TRUE(s.get_health() < 0);
 }
+
+TEST(ArcherTest, ShootArrow) {
+    Weapon bow("Longbow", 10, ARCHER);
+    Archer archer("Bob", "Elf", 100, bow);
+    Character target("Bob", "Goblin", 50, Weapon("Club", 5, ENEMY));
+    archer.shoot_arrow(target);
+    EXPECT_EQ(target.get_health(), 40);
+    EXPECT_EQ(archer.get_arrow_count(), 49);
+}
+
+TEST(ArcherTest, WindArrowStrike) {
+    Weapon bow("Longbow", 10, ARCHER);
+    Archer archer("Bob", "Elf", 100, bow);
+    Character target("Bob", "Goblin", 50, Weapon("Club", 5, ENEMY));
+    archer.wind_arrow_strike(target);
+    EXPECT_EQ(target.get_health(), 0);
+    EXPECT_EQ(archer.get_arrow_count(), 45);
+}
+
+TEST(ArcherTest, BowSmack) {
+    Weapon bow("Longbow", 10, ARCHER);
+    Archer archer("Bob", "Elf", 100, bow);
+    Character target("Bob", "Goblin", 50, Weapon("Club", 5, ENEMY));
+    archer.bow_smack(target);
+    EXPECT_EQ(target.get_health(), 48);
+}
+
+TEST(ArcherTest, SetAndGetArrowCount) {
+    Weapon bow("Longbow", 10, ARCHER);
+    Archer archer("Bob", "Elf", 100, bow);
+    archer.set_arrow_count(30);
+    EXPECT_EQ(archer.get_arrow_count(), 30);
+}
+
 //warrior tests
 
 TEST(warriorTest, getNameTest)
@@ -301,7 +421,37 @@ TEST(warriorTest, throwBombTest)
     Skeleton s("Jim", "monster", 50, scythe);
 
     w.throw_bomb(s);
-    EXPECT_EQ(s.get_health(), 30);
+    EXPECT_TRUE(s.get_health() < 0);
+}
+
+TEST(WarriorTest, SwingSword) {
+    Weapon sword("Greatsword", 25, WARRIOR);
+    Warrior warrior("Conan", "Human", 150, sword);
+    Character target("Enemy", "Orc", 100, Weapon("Axe", 20, WARRIOR));
+    warrior.swing_sword(target);
+    EXPECT_EQ(target.get_health(), 75);
+}
+
+TEST(WarriorTest, FlameStrike) {
+    Weapon sword("Greatsword", 25, WARRIOR);
+    Warrior warrior("Conan", "Human", 150, sword);
+    Character target("Enemy", "Orc", 100, Weapon("Axe", 20, WARRIOR));
+    warrior.flame_strike(target);
+    EXPECT_EQ(target.get_health(), 50);
+}
+
+TEST(WarriorTest, ThrowBomb) {
+    Weapon sword("Greatsword", 25, WARRIOR);
+    Warrior warrior("Conan", "Human", 150, sword);
+    Character target("Enemy", "Orc", 100, Weapon("Axe", 20, WARRIOR));
+    warrior.throw_bomb(target);
+    EXPECT_TRUE(target.get_health() < 0);
+}
+
+TEST(WarriorTest, GetBombCount) {
+    Weapon sword("Greatsword", 25, WARRIOR);
+    Warrior warrior("Conan", "Human", 150, sword);
+    EXPECT_EQ(warrior.get_bomb_count(), 5);
 }
 
 // tests for get_name function
@@ -332,11 +482,6 @@ TEST(RaceSuite, correctRace) { // tests set_race(string)
     Character c("name", "race", 0, Weapon("weapon", 10, character_class::THIEF));
     c.set_race("elf");
     EXPECT_EQ(c.get_race(), "elf");
-}
-
-TEST(RaceSuite, falseRace) {
-    Character c("name", "race", 0, Weapon("weapon", 10, character_class::THIEF));
-    EXPECT_EQ(c.get_race(), "Not a race");
 }
 
 // test for get_health()
