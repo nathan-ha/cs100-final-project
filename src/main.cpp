@@ -114,7 +114,7 @@ int main()
             cout << "As a " << playerclass << ", Your base HP is " << player->get_health() << endl;
             cout << "The king's guild then presents you a " << playerweapon.name << ", it has " << playerweapon.damage << " attack value." << endl
                  << endl;
-            failcheck = false;
+            failcheck = false; 
         }
         else if (playerclass == "Thief" || playerclass == "thief" || playerclass == "t" || playerclass == "T")
         {
