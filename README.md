@@ -177,6 +177,13 @@ There are three getter and setter functions that will get/set the IGN (in game n
 **Wolf, Goblin, Skeleton, Dragon:** Similar to the player classes, these will inherit from the Character class. Unlike the player classes, however, these will be reserved for enemies that the player will face. The “enemies” will have methods that are only used for attacking the character. 
  
 **Weapon Class:** A small class that will represent the weapons that each character will carry. Each weapon will have a name, a damage value, and a specific class that can wield a given weapon. It will be implemented in the character class.
+
+**SOLID Principles:** 
+S - Each of the classes we have written only really do one thing. Starting with the “biggest” class in scope, we have the Character class. This class is only responsible for storing basic information that is necessary for every class that inherits from it (such as health, name, weapons, etc.). For the other classes, such as Thief, Warrior, and Archer, they only implement the attacks that those characters can do. For example, an Archer can shoot arrows but not much more.
+O - The easiest to see example of this principle can be seen in the way that the various character classes inherit from Character. For example, all the Warrior class does is add a few attacks. There is no need to modify the Character class in order to do this. This also goes for pretty much all the other classes, too. We add new functions for the derived classes without changing the original.
+L - This principle holds true in our class system because all the functions that belong to Character also belong to the classes inheriting from it. The derived classes only add a few attack functions. This means that there should be no problem replacing instances of Character with instances of Thief, Warrior, Archer, etc.
+I - We stayed true to this principle because the Character class contains only the necessary functionality for all characters in this game. In other words, it doesn’t implement any interfaces that are not being used by everyone. The classes that inherit from it also only implement exactly what they need, and nothing more.
+D - We displayed this principle in the attack functions implemented by the derived classes. The parameters are Character references, meaning that we can actually attack any kind of character, as opposed to hard-coding attack functions for each of the enemy types.
  
  ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
