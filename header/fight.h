@@ -36,7 +36,7 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
 
 
         // Player turn
-        if (choice == 'f')
+        if (choice == 'f') // flee
         {
             output << "You choose to flee! As you turn around in a panic, you trip on a rock.\n";
             output << "Your enemy takes advantage of this, and deals a fatal blow!\n";
