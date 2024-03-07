@@ -18,7 +18,7 @@
 bool fight(Character& player, Character& enemy, std::istream& input = std::cin, std::ostream& output = std::cout)
 // bool fight(Character& player, Character &enemy)
 {
-    output << "A wild " + enemy.get_race() + " appeared!\n"
+    output << enemy.get_name() + ", the " + enemy.get_race() + " has appeared!\n"
          << "The enemy has " << enemy.get_health() << " health\n";
 
     while (enemy.get_health() > 0)
@@ -149,11 +149,18 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
             throw "fight.h: invalid player class";
         }
 
+        if (player.get_health() <= 0) 
+        {
+            output << "You died! RIP\n";
+            return false;
+        }
+        
         if (enemy.get_health() <= 0)
         {
             output << "Congratulations! You defeated the " << enemy.get_race() << '\n';
             return true;
         }
+
 
         output << "The enemy is now at " << enemy.get_health() << " health\n";
 

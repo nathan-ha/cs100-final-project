@@ -1,0 +1,92 @@
+[
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/character.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/character.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/character.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/character.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/skeleton.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/skeleton.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/skeleton.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/skeleton.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/thief.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/thief.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/thief.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/thief.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/goblin.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/goblin.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/goblin.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/goblin.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/archer.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/archer.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/archer.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/archer.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/warrior.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/warrior.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/warrior.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/warrior.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/simpleLibrary.dir/characters/wolf.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/wolf.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/characters/wolf.cpp",
+  "output": "src/CMakeFiles/simpleLibrary.dir/characters/wolf.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/src",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/runBuild.dir/main.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/main.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/src/main.cpp",
+  "output": "src/CMakeFiles/runBuild.dir/main.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -o CMakeFiles/runAllTests.dir/character_tests.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/character_tests.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/character_tests.cpp",
+  "output": "tests/CMakeFiles/runAllTests.dir/character_tests.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -o CMakeFiles/runAllTests.dir/fight_test.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/fight_test.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/fight_test.cpp",
+  "output": "tests/CMakeFiles/runAllTests.dir/fight_test.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/runLazyTests.dir/lazy_main.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/lazy_main.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/lazy_main.cpp",
+  "output": "tests/CMakeFiles/runLazyTests.dir/lazy_main.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests/googletest/googlemock",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/src/gmock-all.cc",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/src/gmock-all.cc",
+  "output": "tests/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests/googletest/googlemock",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/src/gmock_main.cc",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/src/gmock_main.cc",
+  "output": "tests/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests/googletest/googletest",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/src/gtest-all.cc",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/src/gtest-all.cc",
+  "output": "tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests/googletest/googletest",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/src/gtest_main.cc",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/src/gtest_main.cc",
+  "output": "tests/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]
