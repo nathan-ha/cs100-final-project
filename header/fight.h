@@ -174,6 +174,12 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         {
             output << "The " << enemy.get_race() << " attacks you!\n";
             enemy.attack(player);
+
+            if (enemy.get_race() == "Wolf") {
+                output<< "The " << enemy.get_race() << " attacks you again!\n";
+                enemy.attack(player);
+            }
+
             output << "You are now at " << player.get_health() << " health!\n";
         }
 
