@@ -1,4 +1,3 @@
-// rand generate based on char class, if archer gen bow weapons,
 #pragma once
 
 #include <vector>
@@ -12,7 +11,7 @@ using namespace std;
 
 // #include me uwu !
 
-void weapon_drop_rate(Character &player)
+void weapon_drop_rate(Character &player) //use
 { //40% chance of weapon dropped
     if(weapon_rate() < 40){
 
@@ -28,7 +27,9 @@ int weapon_rate()
 }
 
 void weapon_drop(Character &player)
-{//addd dialogue and weapon choice y/n
+{
+    string input;
+
     Weapon axe("Big Axe", 15, WARRIOR);
     Weapon slashy_sword("Slashy Sword", 20, WARRIOR);
     Weapon lance("Lance", 30, WARRIOR);
@@ -44,23 +45,57 @@ void weapon_drop(Character &player)
     Weapon bandit_dagger("Bandit's Dagger", 30, THIEF);
     Weapon caltrops("Caltrops", 35, THIEF);
 
-    if (weapon_rate() < 30)
-    {
-        if (player.get_class_type() == WARRIOR)
+    cout << "Replace " << player.get_weapon().name << "(" << player.get_weapon().damage << " damage)? Press Y to confirm." << endl;
+
+        if (weapon_rate() < 30)
         {
-            Warrior &hero = dynamic_cast<Warrior &>(player);
-            hero.set_weapon(axe);
-            hero.get_weapon();
+            if (player.get_class_type() == WARRIOR)
+            {
+                Warrior &hero = dynamic_cast<Warrior &>(player);
+                cout << "New weapon: BIG AXE (15 dmg)"<<endl;
+                cin>>input;
+
+                if (input == "Y" || input == "y"){
+                    hero.set_weapon(axe);
+                    cout << "Weapon switched to " << hero.get_weapon().name;
+                }
+                else{
+                    cout << "Weapon remains "<<hero.get_weapon().name;
+                }
+            
         }
         if (player.get_class_type() == ARCHER)
         {
             Archer &hero = dynamic_cast<Archer &>(player);
-            hero.set_weapon(power_bow);
+            cout << "New weapon: POWER BOW (15 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(power_bow);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
+
         }
         if (player.get_class_type() == THIEF)
         {
             Thief &hero = dynamic_cast<Thief &>(player);
-            hero.set_weapon(big_tack);
+            cout << "New weapon: BIG THUMBTACK (20 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(big_tack);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
     }
     else if (weapon_rate() < 50)
@@ -68,17 +103,50 @@ void weapon_drop(Character &player)
         if (player.get_class_type() == WARRIOR)
         {
             Warrior &hero = dynamic_cast<Warrior &>(player);
-            hero.set_weapon(slashy_sword);
+            cout << "New weapon: SLASHY SWORD (20 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(slashy_sword);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
         if (player.get_class_type() == ARCHER)
         {
             Archer &hero = dynamic_cast<Archer &>(player);
-            hero.set_weapon(punch_bow);
+            cout << "New weapon: PUNCH BOW (20 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(punch_bow);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
         if (player.get_class_type() == THIEF)
         {
             Thief &hero = dynamic_cast<Thief &>(player);
-            hero.set_weapon(stealey_sword);
+            cout << "New weapon: STEALEY SWORD (20 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(stealey_sword);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
     }
     else if (weapon_rate() < 85)
@@ -86,17 +154,53 @@ void weapon_drop(Character &player)
         if (player.get_class_type() == WARRIOR)
         {
             Warrior &hero = dynamic_cast<Warrior &>(player);
-            hero.set_weapon(lance);
+            cout << "New weapon: LANCE (30 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(lance);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
+         
         }
         if (player.get_class_type() == ARCHER)
         {
             Archer &hero = dynamic_cast<Archer &>(player);
-            hero.set_weapon(shootey_bow);
+            cout << "New weapon: SHOOTEY BOW (30 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(shootey_bow);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
+
         if (player.get_class_type() == THIEF)
         {
             Thief &hero = dynamic_cast<Thief &>(player);
-            hero.set_weapon(bandit_dagger);
+            cout << "New weapon: BANDIT's DAGGER (30 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(bandit_dagger);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
+           
         }
     }
     else
@@ -104,17 +208,50 @@ void weapon_drop(Character &player)
         if (player.get_class_type() == WARRIOR)
         {
             Warrior &hero = dynamic_cast<Warrior &>(player);
-            hero.set_weapon(mace);
+            cout << "New weapon: MACE (31 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(mace);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
         if (player.get_class_type() == ARCHER)
         {
             Archer &hero = dynamic_cast<Archer &>(player);
-            hero.set_weapon(flame_bow);
+            cout << "New weapon: FLAME BOW (35 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(flame_bow);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
         if (player.get_class_type() == THIEF)
         {
             Thief &hero = dynamic_cast<Thief &>(player);
-            hero.set_weapon(caltrops);
+            cout << "New weapon: CALTROPS (35 dmg)" << endl;
+            cin >> input;
+
+            if (input == "Y" || input == "y")
+            {
+                hero.set_weapon(caltrops);
+                cout << "Weapon switched to " << hero.get_weapon().name;
+            }
+            else
+            {
+                cout << "Weapon remains " << hero.get_weapon().name;
+            }
         }
     }
-}
+    }
