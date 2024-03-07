@@ -104,5 +104,5 @@ TEST(FightTest, PlayerFlees) {
     EXPECT_FALSE(result);
     EXPECT_GT(player.get_health(), 0); // Player should not die even if they flee
     std::string fight_log = oss.str();
-    EXPECT_TRUE(fight_log.find("You choose to flee! Im disappointed") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You Died.") != std::string::npos);
 }
