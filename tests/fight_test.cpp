@@ -30,6 +30,53 @@ TEST(FightTest, WarriorDefeatsEnemy) {
     EXPECT_GT(player.get_health(), 0);
 }
 
+TEST(FightTest, ArcherDefeatsGoblin) {
+    Archer player("Alice", "Elf", 100, Weapon("Bow", 10, ARCHER));
+    player.set_arrow_count(8);
+    Goblin enemy("Gobta", "Goblin", 1000, Weapon("Sword", 0, ENEMY));
+    std::string input;
+    for (int i = 0; i < 500; i++) {
+        input += "a\n"; // Attack
+        input += "s\n"; // Special Attack
+        input += "i\n"; // Use item
+    }
+    std::istringstream iss(input);
+    std::ostringstream oss;
+    bool result = fight(player, enemy, iss, oss);
+    EXPECT_TRUE(result);
+    std::string fight_log = oss.str();
+    EXPECT_TRUE(fight_log.find("You smack the enemy with your bow!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You use wind arrow strike!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You're out of arrows!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You don't have enough arrows!") != std::string::npos);
+    EXPECT_LT(player.get_arrow_count(), 1);
+    EXPECT_TRUE(fight_log.find("You shoot an arrow at the enemy!") != std::string::npos);
+    EXPECT_GT(player.get_health(), 0);
+}
+
+TEST(FightTest, ThiefDefeatsWolf) {
+    Thief player("Eve", "Human", 80, Weapon("Dagger", 5, THIEF));
+    Wolf enemy("Wolf", "Animal", 1000, Weapon("Claws", 0, ENEMY));
+    std::string input;
+    for (int i = 0; i < 500; ++i) {
+        input += "a\n"; // Attack
+        input += "s\n"; // Special Attack
+        input += "i\n"; // Use item
+    }
+    std::istringstream iss(input); 
+    std::ostringstream oss; 
+    bool result = fight(player, enemy, iss, oss);
+    EXPECT_TRUE(result); // Thief should defeat the wolf
+    EXPECT_GT(player.get_health(), 0); // Player should survive the fight
+    std::string fight_log = oss.str();
+    EXPECT_TRUE(fight_log.find("You stab the enemy!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You use Mirage Step!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You throw your knife!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You're out of knives!") != std::string::npos);
+    EXPECT_LT(player.get_throwing_knife_count(), 1);
+}
+
+
 // Test when player flees from the fight
 TEST(FightTest, PlayerFlees) {
     Archer player("Bob", "Elf", 80, Weapon("Bow", 20, ARCHER));

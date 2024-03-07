@@ -151,8 +151,8 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
 
         if (player.get_health() <= 0) 
         {
-            output << "You died! RIP\n";
-            return false;
+            output << "After a hard fought battle, You died!P\n";
+            exit(0);
         }
         
         if (enemy.get_health() <= 0)
