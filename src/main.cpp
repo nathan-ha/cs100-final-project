@@ -565,7 +565,7 @@ int main()
 
 void wait_for_user()
 {
-    cout << "\nPress any key to continue...\n";
+    cout << "\nPress enter to continue...\n";
     string s;
     system("read"); // only works on linux/mac
     // system("pause"); // only works on windows
