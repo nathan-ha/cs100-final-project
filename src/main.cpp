@@ -162,7 +162,7 @@ int main()
     cout << "You encounter a clearing where you encounter a goblin" << endl;
 
     wait_for_user();
-
+ 
     /*
     first battle goes here
     */
