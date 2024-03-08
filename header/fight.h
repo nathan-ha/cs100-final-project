@@ -14,7 +14,7 @@
 
 // yeah just #include this file into main
 
-// return true when enemy was defeated, false for flee
+// return true when enemy was defeated, false for flee (and die)
 bool fight(Character& player, Character& enemy, std::istream& input = std::cin, std::ostream& output = std::cout)
 // bool fight(Character& player, Character &enemy)
 {
@@ -36,9 +36,11 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
 
 
         // Player turn
-        if (choice == 'f')
+        if (choice == 'f') // flee
         {
-            output << "You choose to flee! Im disappointed\n";
+            output << "You choose to flee! As you turn around in a panic, you trip on a rock.\n";
+            output << "Your enemy takes advantage of this, and deals a fatal blow!\n";
+            output << "You Died.\n";
             return false;
         }
 
@@ -152,7 +154,7 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         if (player.get_health() <= 0) 
         {
             output << "After a hard fought battle, You died!P\n";
-            exit(0);
+            return false;
         }
         
         if (enemy.get_health() <= 0)
