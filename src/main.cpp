@@ -219,6 +219,7 @@ int main()
         cout << "feeling energetic you sense danger behind you as a skeleton approaches you from behind" << endl;
         cout << "> fight? (F)" << endl
              << "> flee(R)" << endl
+             << "> Quit(Q)" << endl
              << endl;
         cin >> userchoice;
         if (userchoice == "F" || userchoice == "f")
@@ -238,6 +239,13 @@ int main()
             userchoice = "";
             delete player;
             return 0; // game over
+        }
+        else if( userchoice == "Q" || userchoice == "q")
+        {
+            userchoice = "";
+            cout << "Farewell Adventurer " << playername << endl;
+            delete player;
+            return 0;
         }
         else
         {
@@ -281,6 +289,7 @@ int main()
         cout << "Open chest?" << endl
              << "> Yes (Y)" << endl
              << "> No (N)" << endl
+             << "> Quit (Q)" << endl
              << endl;
         cin >> userchoice;
         if (userchoice == "Y" || userchoice == "y")
@@ -292,6 +301,7 @@ int main()
             cout << "Proceed with the map's directions?" << endl;
             cout << "> Yes (Y)" << endl
                  << "> No (N)" << endl
+                 << "> Quit (Q)" << endl
                  << endl;
             cin >> userchoice;
             if (userchoice == "Y" || userchoice == "y")
@@ -334,6 +344,7 @@ int main()
                     cout << "Are you ready?" << endl;
                     cout << "> Yes(Y)" << endl
                          << "> No(N)" << endl
+                         << "> Quit (Q)" << endl
                          << endl;
                     cin >> userchoice;
                     if (userchoice == "N" || userchoice == "n")
@@ -364,6 +375,13 @@ int main()
                         delete player;
                         return 0;
                     }
+                    else if( userchoice == "Q" || userchoice == "q")
+                    {
+                        userchoice = "";
+                        cout << "Farewell Adventurer " << playername << endl;
+                        delete player;
+                        return 0;
+                    }
                     else
                     {
                         cout << endl << " -------------------------------------------------------------------------------" << endl << endl << endl << endl;
@@ -376,6 +394,13 @@ int main()
                         delete player;
                         return 0;
                     }
+                }
+                else if( userchoice == "Q" || userchoice == "q")
+                {
+                    userchoice = "";
+                    cout << "Farewell Adventurer " << playername << endl;
+                    delete player;
+                    return 0;
                 }
                 else
                 {
@@ -410,6 +435,7 @@ int main()
             cout << "Go and assist the villagers? or turn the other way?" << endl;
             cout << "> Assist (A)" << endl
                  << "> Turn the other way(D)" << endl
+                 << "> Quit (Q)" << endl
                  << endl;
             cin >> userchoice;
             if (userchoice == "D" || userchoice == "d")
@@ -467,6 +493,7 @@ int main()
                 cout << "Fight the skeleton knight guarding the entrance?" << endl;
                 cout << "> fight (F)" << endl
                      << "> Flee (R)" << endl
+                     << "> Quit (Q)" << endl
                      << endl;
                 cin >> userchoice;
                 if (userchoice == "R" || userchoice == "r")
@@ -533,6 +560,13 @@ int main()
                         delete player;
                         return 0;
                     }
+                    else if( userchoice == "Q" || userchoice == "q")
+                    {
+                        userchoice = "";
+                        cout << "Farewell Adventurer " << playername << endl;
+                        delete player;
+                        return 0;
+                    }
                     else
                     {
                         cout << endl << " -------------------------------------------------------------------------------" << endl << endl << endl << endl;
@@ -547,8 +581,15 @@ int main()
                         return 0;
                     }
                 }
-                else
+                else if( userchoice == "Q" || userchoice == "q")
                 {
+                    userchoice = "";
+                    cout << "Farewell Adventurer " << playername << endl;
+                    delete player;
+                    return 0;
+                }
+                else
+                {//knight fight at dragon entrance
                     cout << endl << " -------------------------------------------------------------------------------" << endl << endl << endl << endl;
                     userchoice = "";
                     cout << "unsure what to do, you hesitate and other patroling skeleton guards ambush you from behind" << endl;
@@ -556,6 +597,13 @@ int main()
                     delete player;
                     return 0;
                 }
+            }
+            else if( userchoice == "Q" || userchoice == "q")
+            {
+                userchoice = "";
+                cout << "Farewell Adventurer " << playername << endl;
+                delete player;
+                return 0;
             }
             else
             { // wrong key for village scene
@@ -571,6 +619,24 @@ int main()
             delete player;
             return 0;
         }
+        else if( userchoice == "Q" || userchoice == "q")//chest scene
+        {
+            userchoice = "";
+            cout << "Farewell Adventurer " << playername << endl;
+            delete player;
+            return 0;
+        }
+        else{
+            cout << endl << " -------------------------------------------------------------------------------" << endl << endl << endl << endl;
+            userchoice = "";
+            cout << "You carelessly reapproach the chest, tripping on a unseen wire and triggering a hidden boobytrap" << endl;
+            cout << "Spikes fly in all directions as you fall on your face as you try to take cover" << endl;
+            cout << "Because of the activated boobytrap, the cave you are in collapses, burying you alive with it" << endl;
+            cout << "GAME OVER" << endl;
+
+            delete player;
+            return 0;
+        }
     }
     else if (userchoice == "M" || userchoice == "m")
     { // path prompt
@@ -580,7 +646,8 @@ int main()
         cout << "However it is found to be a more treacherous as the entire right flank of the path is a bottomless fall" << endl;
         cout << "As you make your way up the mountain, the dragon king flies right by you creating hurrticane winds" << endl;
         cout << "> Grab onto something (S)" << endl
-             << "> Stand your ground as best you can (W)" << endl;
+             << "> Stand your ground as best you can (W)" << endl
+             << "> Quit (Q)" << endl;
         cin >> userchoice;
         if (userchoice == "W" || userchoice == "w")
         { // cliff side prompt
@@ -617,6 +684,13 @@ int main()
             cout << "With nowhere to run, nowhere to hide, you close your eyes as you brace for the inevitable" << endl;
             cout << "The dragon king unleashes it's devastating breath attack, and you feel nothing but warmth as you burn away to ashes..." << endl;
             cout << endl << "GAME OVER" << endl;
+            delete player;
+            return 0;
+        }
+        else if( userchoice == "Q" || userchoice == "q")
+        {//dragon wind scene
+            userchoice = "";
+            cout << "Farewell Adventurer " << playername << endl;
             delete player;
             return 0;
         }
