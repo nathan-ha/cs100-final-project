@@ -5,6 +5,8 @@
 #include "../header/goblin.h"
 #include "../header/archer.h"
 #include "../header/warrior.h"
+#include "../header/dragon.h"
+#include "../header/wolf.h"
 
 TEST(CharacterTest, GetName) {
     Weapon weapon("Sword", 10, WARRIOR);
@@ -523,3 +525,19 @@ TEST(Goblin, enemyraceTest) {
 //     EXPECT_EQ(fight(w, c), true);
 
 // }
+
+TEST(DragonTest, DragonAttacksTarget) {
+    Dragon dragon("Smore", "Fire Dragon", 100, Weapon("Fire Breath", 30, ENEMY));
+    Warrior target("Bob", "Human", 100, Weapon("Sword", 20, WARRIOR));
+    int initial_health = target.get_health();
+    dragon.attack(target);
+    EXPECT_LT(target.get_health(), initial_health);
+}
+
+TEST(DragonTest, DragonAttacksTargetLowHealth) {
+    Dragon dragon("Smore", "Fire Dragon", 100, Weapon("Fire Breath", 30, ENEMY));
+    Warrior target("Bob", "Human", 10, Weapon("Sword", 20, WARRIOR));
+    int initial_health = target.get_health();
+    dragon.attack(target);
+    EXPECT_LT(target.get_health(), initial_health);
+}
