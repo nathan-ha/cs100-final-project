@@ -150,12 +150,6 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         {
             throw "fight.h: invalid player class";
         }
-
-        if (player.get_health() <= 0) 
-        {
-            output << "After a hard fought battle, You died!P\n";
-            return false;
-        }
         
         if (enemy.get_health() <= 0)
         {
@@ -183,6 +177,12 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
             }
 
             output << "You are now at " << player.get_health() << " health!\n";
+        }
+
+        if (player.get_health() <= 0) 
+        {
+            output << "After a hard fought battle, You died!\n";
+            return false;
         }
 
     }
