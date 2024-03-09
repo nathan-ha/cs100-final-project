@@ -7,6 +7,7 @@ using namespace std;
 #include "../header/goblin.h"
 #include "../header/fight.h"
 #include "../header/wolf.h"
+#include "../header/dragon.h"
 
 void wait_for_user();
 
@@ -515,6 +516,7 @@ int main()
                         /*
                         Dragon fight goes here
                         */
+                        
                         cout << endl
                              << " -------------------------------------------------------------------------------" << endl
                              << endl
@@ -790,7 +792,13 @@ int main()
                         /*
                         Dragon fight goes here
                         */
-                        // TODO: make dragon fight
+                        Dragon dragon("Dragorn", "Big Dragon", 150, Weapon("Fire Breath", 60, ENEMY));
+                        player_wins = fight(*player, dragon);
+                        if (!player_wins)
+                        {
+                            delete player;
+                            return 0;
+                        }
 
                         cout << endl
                              << " -------------------------------------------------------------------------------" << endl
@@ -951,7 +959,12 @@ int main()
             /*
             impossible dragon fight goes here --> GAME OVER
             */
-           // TODO: impossibe dragon fight
+            Dragon dragon2("Dragogon", "REALLY Big Dragon", 1000, Weapon("Super Fire Breath", 80, ENEMY));
+            player_wins = fight(*player, dragon2);
+            if (!player_wins)
+            {
+                delete player;
+            }
 
             cout << endl
                  << " -------------------------------------------------------------------------------" << endl
