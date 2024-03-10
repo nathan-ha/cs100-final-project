@@ -9,6 +9,7 @@
 #include "goblin.h"
 #include "skeleton.h"
 #include "wolf.h"
+#include "dragon.h"
 
 
 
