@@ -161,6 +161,8 @@ Ahead of you is a dark cave, dimly lit by torches along its walls. You see scrat
 
 Class Diagram Link
 https://lucid.app/lucidchart/2588b390-7366-4480-a13d-4a7573269aac/edit?viewport_loc=-1482%2C-412%2C2121%2C1123%2C0_0&invitationId=inv_125d7603-efbc-41ee-9c68-4401348430da
+<img width="705" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/658f3340-582d-44b0-a3ab-ecb8c7211191">
+
 
 Class Diagram Description
 **Character Class:** A base class that contains the character’s name and race as a string, base health as an int, and current weapon as a weapon class. 
@@ -196,9 +198,13 @@ D - We displayed this principle in the attack functions implemented by the deriv
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+> <img width="1071" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/af7d3755-3af0-4e9c-8b34-ae4ff0e4f5a7">
+<img width="1074" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/e38dd516-63bf-46d8-963c-ba36eb6cdfae">
+<img width="1073" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/d0dc4b3d-20bc-4f47-bf2f-c1b8d05e5b30">
+
+
  ## Installation/Usage
- > Instructions on installing and running your application
+ To install, clone this repository. Make sure you have cmake and a c++ compiler installed. Then run `cmake . && make` in the terminal to compile. To run the game, run the command `./bin/runBuild`. From there, you can follow the instructions on the screen.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+We tested the code by running unit tests to ensure all the classes and functions run properly. Before we push new code, we made sure to pass all the tests first. We also played the game itself to make sure every ran smoothly.
  
