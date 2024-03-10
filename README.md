@@ -161,7 +161,7 @@ Ahead of you is a dark cave, dimly lit by torches along its walls. You see scrat
 
 Class Diagram Link
 https://lucid.app/lucidchart/2588b390-7366-4480-a13d-4a7573269aac/edit?viewport_loc=-1482%2C-412%2C2121%2C1123%2C0_0&invitationId=inv_125d7603-efbc-41ee-9c68-4401348430da
-<img width="705" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/658f3340-582d-44b0-a3ab-ecb8c7211191">
+<img width="781" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/e89d1e8c-4314-48ef-9e2a-dc1ff254cf21">
 
 
 Class Diagram Description
