@@ -46,7 +46,7 @@
    ## User Interface Specification
 
 ### Navigation Diagram
-![nav diagram](https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/130444120/31d1a4e1-5b16-48f3-9462-c29ebab99bc6)
+![nav diagram](https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/83557033/f8c26941-6eac-4f30-aaba-63ba754782d6)
 
 The diagram starts where the user will chooose their IGN (in game name). They will choose a game difficulty, choose, their class (archer, thief, or warrior), then play the game. Whether they win, lose, or quit, they will be redirected to the restart page. If they choose to restart, they will be prompted to the game difficulty once more. If not, the program will end. At all points and choices in the game given, the user will be given the choice to quit.
 
