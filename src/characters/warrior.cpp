@@ -18,7 +18,7 @@ void Warrior::swing_sword(Character &target)
 
 void Warrior::flame_strike(Character &target)
 {
-    int dmg_amount = current_weapon.damage * 2; // might need balancing
+    int dmg_amount = current_weapon.damage * 3; // might need balancing
     int target_new_health = target.get_health() - dmg_amount;
     target.set_health(target_new_health);
 }

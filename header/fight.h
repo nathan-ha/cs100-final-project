@@ -30,20 +30,23 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         output << "Attack (a)\n"
              << "Special Attack (s)\n"
              << "Use item (i)\n"
-             << "Flee (f)\n";
+             << "Flee or Quit(f/q)\n\n";
 
         input >> choice;
         choice = tolower(choice);
-
+        if(isupper(choice)){//convert choice to lowercase
+            choice = tolower(choice);
+        }
 
         // Player turn
-        if (choice == 'f') // flee
+        if (choice == 'f' || choice == 'q') // flee
         {
             output << "You choose to flee! As you turn around in a panic, you trip on a rock.\n";
             output << "Your enemy takes advantage of this, and deals a fatal blow!\n";
             output << "You Died.\n";
             return false;
         }
+
 
         // different classes have different movesets
         if (player.get_class_type() == WARRIOR)
