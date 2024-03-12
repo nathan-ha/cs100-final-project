@@ -57,15 +57,7 @@ As a text-based RPG, the screen layout of the game will generally follow the sam
 
 **Name prompt screen (requires user input):**
 ```
-CHOOSE YOUR NAME: (user input)
-```
-The end of the game, whether it results in a loss or win, will have only the options to restart or exit the game. 
-
-**Loss screen:**
-```
-GAME OVER
-> Restart
-> Exit
+Enter your name: (user input)
 ```
 The middle portion of the game past inputting an username will have the following text prompts and options based on their type of scenario:
 
@@ -89,54 +81,43 @@ Special attack - Mirage Step (water elemental evasive skill: dodge skill for 1-2
 **Combat:** The player is presented with a screen displaying the enemy, which will be a Goblin, Skeleton, Wolf, or Dragon. Depending on the specific enemy, the damage and debuff outputs will be different. However, what is not reliant on the enemy class is the player’s current weapon, consumables, and character class. 
 For example, a standard skeleton fighting an archer character will have the following screen:
 ```
-A wild Skeleton appeared! 
+A <skeleton name>, the Skeleton has appeared! 
 
 > Attack
 > Special Attack
-> Inventory
+> Use Item
 > Flee
 ```
 Upon choosing attack:
 ```
-PLAYER shot an arrow ! Skeleton has resisted the attack !
-
-10 Health has been depleted from Skeleton
-40 Health remaining.
-
-Skeleton has attacked !
-
-20 Health has been depleted from PLAYER.
-120 Heath remaining.
+You shoot an arrow at the enemy!
+You have 49 arrows left.
+The enemy is now at 14 health
+The Goblin attacks you!
+You are now at 60 health!
 ```
 
 Upon choosing special attack:
 
 ```
-PLAYER used Wind Arrow ! Skeleton has taken elemental damage !
-
-25 Health has been depleted from Skeleton.
-25 Health remaining.
-
-Skeleton has attacked !
-
-23 Health has been depleted from PLAYER.
-117 Health remaining.
+You use wind arrow strike!
+The enemy is now at 15 health
+The Skeleton attacks you!
+You are now at 70 health!
 ```
 Successfully fleeing the battle will yield the screen:
 ```
-You have fled the battle !
+You choose to flee! As you turn around in a panic, you trip on a rock.
+Your enemy takes advantage of this, and deals a fatal blow!
 ```
-(Accessing the inventory will redirect you to the inventory screen.)
 
-**Inventory:**  Inventory screens occur when the player accesses it during a combat scene, or if an item must be dropped for another item.
+**Inventory:**  The player's inventory is utilized during combat.
 
-In combat, it displays consumables. For example, the Thief inventory would display:
+In combat, the "use item" option will automatically use the item in the player's inventory. For example, the Thief inventory would display:
 
 ```
-Accessing Inventory…
-Current Weapon: Simple Sword
-> Throwing Knifes
-> Exit Inventory
+You throw your knife!
+You have 4 throwing knives left.
 ```
 In weapon swapping, it would display as such:
 
