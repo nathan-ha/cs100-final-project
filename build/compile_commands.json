@@ -67,6 +67,12 @@
 },
 {
   "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests",
+  "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googlemock -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest/include -isystem /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/googletest/googletest  -std=c++1y -g -o CMakeFiles/runAllTests.dir/weapon_swap_tests.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/weapon_swap_tests.cpp",
+  "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/weapon_swap_tests.cpp",
+  "output": "tests/CMakeFiles/runAllTests.dir/weapon_swap_tests.cpp.o"
+},
+{
+  "directory": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/build/tests",
   "command": "/usr/bin/g++  -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googletest/include -I/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/test/googlemock/include  -std=c++1y -g -o CMakeFiles/runLazyTests.dir/lazy_main.cpp.o -c /home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/lazy_main.cpp",
   "file": "/home/csmajs/nha023/final-project-nha023-nshin018-klian035-clu113/tests/lazy_main.cpp",
   "output": "tests/CMakeFiles/runLazyTests.dir/lazy_main.cpp.o"

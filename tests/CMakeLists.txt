@@ -6,6 +6,7 @@ add_subdirectory(googletest)
 add_executable(runAllTests
   character_tests.cpp
   fight_test.cpp
+  weapon_swap_tests.cpp
 )
 
 add_executable(runLazyTests
