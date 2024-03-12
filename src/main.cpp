@@ -50,12 +50,6 @@ int main()
 
     cout << "Enter your name: ";
     cin >> playername;
-    if (playername == "q" || playername == "Q")
-    {
-        cout << "Farewell unknown Adventurer." << endl;
-        delete player;
-        return 0; // Exit the game
-    }
 
     cout << " -------------------------------------------------------------------------------" << endl
          << endl
@@ -84,12 +78,6 @@ int main()
          << endl;
 
     cin >> playerclass;
-    if (playerclass == "q" || playerclass == "Q")
-    { // repeat this chunck for player's options
-        cout << "Farewell Adventurer" << endl;
-        delete player;
-        return 0; // Exit the game
-    }
 
     bool failcheck = true;
     while (failcheck == true)
