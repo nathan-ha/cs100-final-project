@@ -970,10 +970,6 @@ int main()
             */
             Dragon dragon2("Dragogon", "REALLY Big Dragon", 1000, Weapon("Super Fire Breath", 80, ENEMY));
             player_wins = fight(*player, dragon2);
-            if (!player_wins)
-            {
-                delete player;
-            }
 
             cout << endl
                  << " -------------------------------------------------------------------------------" << endl
