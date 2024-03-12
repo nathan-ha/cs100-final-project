@@ -363,7 +363,7 @@ int main()
         /*
         wolf fight goes here
         */
-        Wolf wolf("JARED", "Wolf", 50, Weapon("fangs", 40, ENEMY));
+        Wolf wolf("JARED", "Wolf", 50, Weapon("fangs", 20, ENEMY));
         player_wins = fight(*player, wolf);
         if (!player_wins)
         {
@@ -517,6 +517,14 @@ int main()
                         Dragon fight goes here
                         */
                         
+                        Dragon dragon("Dragon King", "Big Dragon", 150, Weapon("Fire Breath", 60, ENEMY));
+                        player_wins = fight(*player, dragon);
+                        if (!player_wins)
+                        {
+                            delete player;
+                            return 0;
+                        }
+
                         cout << endl
                              << " -------------------------------------------------------------------------------" << endl
                              << endl
@@ -646,15 +654,14 @@ int main()
                 /*
                 skeleton battle goes here (knight?)
                 */
-                Skeleton skeleton_knight("Skeletazoo", "Skeleton Knight", 80, Weapon("Really Really Big Bone", 50, ENEMY));
+                Skeleton skeleton_knight("Skeletazoo", "Skeleton Knight", 80, Weapon("Really Really Big Bone", 30, ENEMY));
                 player_wins = fight(*player, skeleton_knight);
                 if (!player_wins)
                 {
                     delete player;
                     return 0;
                 }
-                cout << "You get healed to " << max_health << " hp\n";
-                player->set_health(max_health);
+          
 
                 cout << endl
                      << " -------------------------------------------------------------------------------" << endl
@@ -665,10 +672,13 @@ int main()
                 cout << "For your reward for helping the villagers, they offer you to rest before you continue on your quest" << endl;
                 cout << "Thankful for the reward you decide to spend the night patching up your wounds" << endl
                      << endl;
-
+                                         
+                max_health = max_health * 1.25;
+                cout << "You get healed to " << max_health << " hp\n";
+                player->set_health(max_health);
                 wait_for_user();
 
-                // set player health to 100% OR +50% to current hp if makeing back to 100% is too OP
+                // set player health to +25% to current maxhp
 
                 cout << endl
                      << " -------------------------------------------------------------------------------" << endl
@@ -945,10 +955,9 @@ int main()
                  << endl;
             cout << "You stand your ground, however the dragon notices you, and you are forced to fight for your life" << endl;
             /*
-            set player HP to 30% of current or base HP
             this fight is meant to be a impossible fight
             */
-            cout << "Faced with no other choice, you draw your " << playerweapon.name << " and commence battle" << endl;
+            cout << "Faced with no other choice, you draw your " << playerweapon.name << " and commence a hopeless battle" << endl;
 
             cout << endl
                  << " -------------------------------------------------------------------------------" << endl
@@ -957,7 +966,7 @@ int main()
                  << endl;
 
             /*
-            impossible dragon fight goes here --> GAME OVER
+            impossible dragon fight goes here --> is scripted to make GAME OVER no matter what the player does
             */
             Dragon dragon2("Dragogon", "REALLY Big Dragon", 1000, Weapon("Super Fire Breath", 80, ENEMY));
             player_wins = fight(*player, dragon2);
