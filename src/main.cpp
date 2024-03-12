@@ -50,12 +50,6 @@ int main()
 
     cout << "Enter your name: ";
     cin >> playername;
-    if (playername == "q" || playername == "Q")
-    {
-        cout << "Farewell unknown Adventurer." << endl;
-        delete player;
-        return 0; // Exit the game
-    }
 
     cout << " -------------------------------------------------------------------------------" << endl
          << endl
@@ -84,12 +78,6 @@ int main()
          << endl;
 
     cin >> playerclass;
-    if (playerclass == "q" || playerclass == "Q")
-    { // repeat this chunck for player's options
-        cout << "Farewell Adventurer" << endl;
-        delete player;
-        return 0; // Exit the game
-    }
 
     bool failcheck = true;
     while (failcheck == true)
@@ -970,10 +958,6 @@ int main()
             */
             Dragon dragon2("Dragogon", "REALLY Big Dragon", 1000, Weapon("Super Fire Breath", 80, ENEMY));
             player_wins = fight(*player, dragon2);
-            if (!player_wins)
-            {
-                delete player;
-            }
 
             cout << endl
                  << " -------------------------------------------------------------------------------" << endl

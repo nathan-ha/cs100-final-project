@@ -56,7 +56,7 @@ TEST(FightTest, ArcherDefeatsGoblin) {
 
 TEST(FightTest, ThiefDefeatsWolf) {
     Thief player("Eve", "Human", 80, Weapon("Dagger", 5, THIEF));
-    Wolf enemy("Wolf", "Animal", 1000, Weapon("Claws", 0, ENEMY));
+    Wolf enemy("Wolf", "Wolf", 1000, Weapon("Claws", 0, ENEMY));
     std::string input;
     for (int i = 0; i < 500; ++i) {
         input += "a\n"; // Attack
