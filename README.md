@@ -1,6 +1,3 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Dragonslayer's Quest
 
   Authors: [Claire Lu](https://github.com/claire-lu-113),
@@ -187,16 +184,7 @@ L - This principle holds true in our class system because all the functions that
 I - We stayed true to this principle because the Character class contains only the necessary functionality for all characters in this game. In other words, it doesn’t implement any interfaces that are not being used by everyone. The classes that inherit from it also only implement exactly what they need, and nothing more.
 D - We displayed this principle in the attack functions implemented by the derived classes. The parameters are Character references, meaning that we can actually attack any kind of character, as opposed to hard-coding attack functions for each of the enemy types.
  
- ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
   
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
- 
  ## Screenshots
 > <img width="1071" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/af7d3755-3af0-4e9c-8b34-ae4ff0e4f5a7">
 <img width="1074" alt="image" src="https://github.com/cs100/final-project-nha023-nshin018-klian035-clu113/assets/80845813/e38dd516-63bf-46d8-963c-ba36eb6cdfae">
@@ -206,5 +194,5 @@ D - We displayed this principle in the attack functions implemented by the deriv
  ## Installation/Usage
  To install, make sure you have git. Clone this repository and run `git submodule init && git submodule update`. Make sure you have cmake and a c++ compiler installed. Then run `cmake . && make` in the terminal to compile. To run the game, run the command `./bin/runBuild`. From there, you can follow the instructions on the screen.
  ## Testing
-We tested the code by running unit tests to ensure all the classes and functions run properly. Before we push new code, we made sure to pass all the tests first. We also played the game itself to make sure every ran smoothly.
+We tested the code by running unit tests to ensure all the classes and functions run properly. Before we push new code, we made sure to pass all the tests first. We also played the game itself to make sure everything ran smoothly.
  

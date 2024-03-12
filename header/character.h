@@ -45,6 +45,6 @@ public:
     void set_weapon(Weapon &w);
 
     virtual ~Character() = default;
-    virtual void attack(Character &target) {} // for enemeies
+    virtual void attack(Character &target) {}
 
 };
