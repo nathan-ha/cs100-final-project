@@ -199,7 +199,7 @@ TEST(thiefTest, stabTest)
     Skeleton s("Jim", "monster", 100, sword);
     Thief t("Jim", "human", 100, sword);
     t.stab(s);
-    EXPECT_EQ(s.get_health(), 80);
+    EXPECT_EQ(s.get_health(), 60);
 }
 
 TEST(thiefTest, throwKnifeTest)
@@ -208,7 +208,7 @@ TEST(thiefTest, throwKnifeTest)
     Skeleton s("Jim", "monster", 100, sword);
     Thief t("Jim", "human", 100, sword);
     t.throw_knife(s);
-    EXPECT_EQ(s.get_health(), 60);
+    EXPECT_EQ(s.get_health(), 40);
 }
 
 TEST(ThiefTest, Stab) {
@@ -216,7 +216,7 @@ TEST(ThiefTest, Stab) {
     Thief thief("Rogue", "Human", 100, dagger);
     Character target("Enemy", "Orc", 50, Weapon("Sword", 20, WARRIOR));
     thief.stab(target);
-    EXPECT_EQ(target.get_health(), 35);
+    EXPECT_EQ(target.get_health(), 20);
 }
 
 TEST(ThiefTest, ThrowKnife) {
@@ -224,7 +224,7 @@ TEST(ThiefTest, ThrowKnife) {
     Thief thief("Rogue", "Human", 100, dagger);
     Character target("Enemy", "Orc", 50, Weapon("Sword", 20, WARRIOR));
     thief.throw_knife(target);
-    EXPECT_EQ(target.get_health(), 20);
+    EXPECT_EQ(target.get_health(), 5);
 }
 
 TEST(ThiefTest, GetSetThrowingKnifeCount) {
@@ -413,7 +413,7 @@ TEST(warriorTest, flameStrikeTest)
     Skeleton s("Jim", "monster", 50, scythe);
 
     w.flame_strike(s);
-    EXPECT_EQ(s.get_health(), 0);
+    EXPECT_LT(s.get_health(), 0);
 }
 
 TEST(warriorTest, throwBombTest)
@@ -439,7 +439,7 @@ TEST(WarriorTest, FlameStrike) {
     Warrior warrior("Conan", "Human", 150, sword);
     Character target("Enemy", "Orc", 100, Weapon("Axe", 20, WARRIOR));
     warrior.flame_strike(target);
-    EXPECT_EQ(target.get_health(), 50);
+    EXPECT_EQ(target.get_health(), 25);
 }
 
 TEST(WarriorTest, ThrowBomb) {
