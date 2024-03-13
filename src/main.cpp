@@ -176,6 +176,7 @@ int main()
     player_wins = fight(*player, goblin);
     if (!player_wins)
     {
+        cout << endl << "GAME OVER" << endl;
         delete player;
         return 0;
     }
@@ -314,6 +315,7 @@ int main()
         player_wins = fight(*player, skeleton);
         if (!player_wins)
         {
+            cout << endl << "GAME OVER" << endl;
             delete player;
             return 0;
         }
@@ -357,6 +359,7 @@ int main()
         player_wins = fight(*player, wolf);
         if (!player_wins)
         {
+            cout << endl << "GAME OVER" << endl;
             delete player;
             return 0;
         }
@@ -445,6 +448,7 @@ int main()
                     player_wins = fight(*player, skeleton2);
                     if (!player_wins)
                     {
+                        cout << endl << "GAME OVER" << endl;
                         delete player;
                         return 0;
                     }
@@ -452,6 +456,7 @@ int main()
                     player_wins = fight(*player, goblin2);
                     if (!player_wins)
                     {
+                        cout << endl << "GAME OVER" << endl;
                         delete player;
                         return 0;
                     }
@@ -511,6 +516,7 @@ int main()
                         player_wins = fight(*player, dragon);
                         if (!player_wins)
                         {
+                            cout << endl << "GAME OVER" << endl;
                             delete player;
                             return 0;
                         }
@@ -648,6 +654,7 @@ int main()
                 player_wins = fight(*player, skeleton_knight);
                 if (!player_wins)
                 {
+                    cout << endl << "GAME OVER" << endl;
                     delete player;
                     return 0;
                 }
@@ -737,6 +744,7 @@ int main()
                     player_wins = fight(*player, skeleton_knight);
                     if (!player_wins)
                     {
+                        cout << endl << "GAME OVER" << endl;
                         delete player;
                         return 0;
                     }
@@ -796,6 +804,7 @@ int main()
                         player_wins = fight(*player, dragon);
                         if (!player_wins)
                         {
+                            cout << endl << "GAME OVER" << endl;
                             delete player;
                             return 0;
                         }
