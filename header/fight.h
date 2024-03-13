@@ -26,10 +26,21 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         // player attacks first
         char choice = 0;
         bool is_invulnerable = false; // only used by thief
-        output << "Attack (a)\n"
-             << "Special Attack (s)\n"
-             << "Use item (i)\n"
-             << "Flee or Quit(f/q)\n\n";
+        if(player.get_class_type() == WARRIOR || player.get_class_type() == THIEF)
+        {
+            output << "Attack (a)\n"
+                << "Special Attack (s)\n"
+                << "Use item (i)\n"
+                << "Flee or Quit(f/q)\n\n";
+        }
+        else if(player.get_class_type() == ARCHER)
+        {
+            output << "Bow Smack (a)\n" 
+                << "Special Attack (s)\n"
+                << "Shoot Arrow (i)\n" 
+                << "Flee or Quit(f/q)\n\n";
+        }
+        
 
         input >> choice;
         choice = tolower(choice);
