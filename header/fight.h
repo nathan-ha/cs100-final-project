@@ -202,8 +202,15 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         if (enemy.get_health() <= 0)
         {
             output << "Congratulations! You defeated the " << enemy.get_race() << '\n';
-            weapon_drop_rate(player);
-            return true;
+            if(enemy.get_race() == "Big Dragon")
+            {
+                return true;
+            }
+            else
+            {
+                weapon_drop_rate(player);
+                return true;
+            }
         }
 
 

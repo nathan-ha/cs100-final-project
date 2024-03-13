@@ -528,7 +528,16 @@ int main()
                              << endl;
                         cout << "You have emerged victorious! With the defeat of the dragon king and the reclamation of His Majesty's sacred treasure from the depths of the northern mountains, the quest is fulfilled." << endl;
                         cout << "You return to the castle to a hero's welcome" << endl;
-                        cout << "VICTORY" << endl;
+                        cout << endl << "------------------------------------------------------------------" 
+                         << endl;
+                        cout << endl << "VICTORY" << endl;
+                        cout << "------------------------------------------------------------------"
+                         << endl
+                         << "This Game was made possible by: Kent Liang, Nathan Ha, Claire Lu, Natalie Shin and you: "
+                         << playername
+                         << endl
+                         << "Thank you for playing our game!"
+                         << endl;
                         delete player;
                         return 0;
                     }
@@ -817,7 +826,16 @@ int main()
 
                         cout << "You have emerged victorious! With the defeat of the dragon king and the reclamation of His Majesty's sacred treasure from the depths of the northern mountains, the quest is fulfilled." << endl;
                         cout << "You return to the castle to a hero's welcome" << endl;
-                        cout << "VICTORY" << endl;
+                        cout << endl << "------------------------------------------------------------------" 
+                         << endl;
+                        cout << endl << "VICTORY" << endl;
+                        cout << "------------------------------------------------------------------"
+                         << endl
+                         << "This Game was made possible by: Kent Liang, Nathan Ha, Claire Lu, Natalie Shin and you: "
+                         << playername
+                         << endl
+                         << "Thank you for playing our game!"
+                         << endl;
                         delete player;
                         return 0;
                     }
