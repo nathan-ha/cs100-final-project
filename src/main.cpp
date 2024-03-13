@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
 #include "../header/character.h"
@@ -30,6 +31,7 @@ int main()
     Character *player = nullptr;
     int max_health = 0;
     bool player_wins = false;
+    srand(time(0));
 
     cout << " -------------------------------------------------------------------------------" << endl
          << endl;

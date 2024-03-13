@@ -10,6 +10,7 @@
 #include "skeleton.h"
 #include "wolf.h"
 #include "dragon.h"
+#include "weapon_inv.h"
 
 
 
@@ -41,7 +42,6 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
                 << "Flee or Quit(f/q)\n\n";
         }
         
-
         input >> choice;
         choice = tolower(choice);
         if(isupper(choice)){//convert choice to lowercase
@@ -200,6 +200,7 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         if (enemy.get_health() <= 0)
         {
             output << "Congratulations! You defeated the " << enemy.get_race() << '\n';
+            weapon_drop_rate(player);
             return true;
         }
 
@@ -222,7 +223,7 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
                 enemy.attack(player);
             }
 
-            output << "You are now at " << player.get_health() << " health!\n";
+            output << "You are now at " << player.get_health() << " health!\n\n";
         }
 
         if (player.get_health() <= 0) 

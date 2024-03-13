@@ -70,7 +70,7 @@ TEST(FightTest, ThiefDefeatsWolf) {
     EXPECT_GT(player.get_health(), 0); // Player should survive the fight
     std::string fight_log = oss.str();
     EXPECT_TRUE(fight_log.find("You stab the enemy!") != std::string::npos);
-    EXPECT_TRUE(fight_log.find("You use Mirage Step!") != std::string::npos);
+    EXPECT_TRUE(fight_log.find("You use Mirage Step and counter the enemy's attack!") != std::string::npos);
     EXPECT_TRUE(fight_log.find("You throw your knife!") != std::string::npos);
     EXPECT_TRUE(fight_log.find("You're out of knives!") != std::string::npos);
     EXPECT_LT(player.get_throwing_knife_count(), 1);

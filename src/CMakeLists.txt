@@ -11,6 +11,7 @@ add_library(simpleLibrary
    characters/warrior.cpp
    characters/wolf.cpp
    characters/dragon.cpp
+   weapon_inv.cpp
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")

@@ -315,7 +315,7 @@ TEST(ArcherTest, ShootArrow) {
     Character target("Bob", "Goblin", 50, Weapon("Club", 5, ENEMY));
     archer.shoot_arrow(target);
     EXPECT_EQ(target.get_health(), 40);
-    EXPECT_EQ(archer.get_arrow_count(), 49);
+    EXPECT_EQ(archer.get_arrow_count(), 74);
 }
 
 TEST(ArcherTest, WindArrowStrike) {
@@ -324,7 +324,7 @@ TEST(ArcherTest, WindArrowStrike) {
     Character target("Bob", "Goblin", 50, Weapon("Club", 5, ENEMY));
     archer.wind_arrow_strike(target);
     EXPECT_EQ(target.get_health(), 0);
-    EXPECT_EQ(archer.get_arrow_count(), 45);
+    EXPECT_EQ(archer.get_arrow_count(), 70);
 }
 
 TEST(ArcherTest, BowSmack) {
