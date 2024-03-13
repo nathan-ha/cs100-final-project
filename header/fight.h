@@ -41,7 +41,6 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
                 << "Flee or Quit(f/q)\n\n";
         }
         
-
         input >> choice;
         choice = tolower(choice);
         if(isupper(choice)){//convert choice to lowercase
