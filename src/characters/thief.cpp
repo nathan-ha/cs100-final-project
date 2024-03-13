@@ -4,7 +4,8 @@
 Thief::Thief(const string &name, const string &race, int health, const Weapon &current_weapon)
     : Character(name, race, health, current_weapon),
       throwing_knife_count(5),
-      is_invulnerable(false)
+      is_invulnerable(false),
+      skillcount(10)
 {
 }
 
@@ -29,4 +30,14 @@ int Thief::get_throwing_knife_count()
 void Thief::set_throwing_knife_count(int x)
 {
     throwing_knife_count = x;
+}
+
+
+int Thief::get_skill_count()
+{
+    return skillcount;
+}
+void Thief::set_skill_count(int t)
+{
+    skillcount = t;
 }

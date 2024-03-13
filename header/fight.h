@@ -21,7 +21,6 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
 {
     output << enemy.get_name() + ", the " + enemy.get_race() + " has appeared!\n"
          << "The enemy has " << enemy.get_health() << " health\n";
-
     while (enemy.get_health() > 0)
     {
         // player attacks first
@@ -59,14 +58,26 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
             }
             else if (choice == 's')
             {
-                output << "You use Flame Strike!\n";
-                hero.flame_strike(enemy);
+                if (hero.get_skill_count() <= 0)
+                {
+                    output << "You're out of skill uses!\n";
+                    output << "As punishment you lose a turn and the enemy attacks you\n";
+                    enemy.attack(player);
+                }
+                else
+                {
+                    output << "You use Flame Strike!\n";
+                    hero.flame_strike(enemy);
+                    output << "You have " << hero.get_skill_count() << " skill uses left.\n";
+                }
             }
             else if (choice == 'i')
             {
                 if (hero.get_bomb_count() <= 0)
                 {
                     output << "You ran out of bombs!\n";
+                    output << "As punishment you lose a turn and the enemy attacks you\n";
+                    enemy.attack(player);
                 }
                 else
                 {
@@ -90,14 +101,28 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
             }
             else if (choice == 's')
             {
-                output << "You use Mirage Step!\n";
-                is_invulnerable = true;
+                if (hero.get_skill_count() <= 0)
+                {
+                    output << "You're out of skill uses!\n";
+                    output << "As punishment you lose a turn and the enemy attacks you\n";
+                    enemy.attack(player);
+                }
+                else
+                {
+                    output << "You use Mirage Step and counter the enemy's attack!\n";
+                    hero.stab(enemy);
+                    is_invulnerable = true;
+                    hero.set_skill_count(hero.get_skill_count()-1);
+                    output << "You have " << hero.get_skill_count() << " skill uses left.\n";
+                }
             }
             else if (choice == 'i')
             {
                 if (hero.get_throwing_knife_count() <= 0)
                 {
                     output << "You're out of knives!\n";
+                    output << "As punishment you lose a turn and the enemy attacks you\n";
+                    enemy.attack(player);
                 }
                 else
                 {
@@ -126,10 +151,14 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
                 if (hero.get_arrow_count() <= 5)
                 {
                     output << "You don't have enough arrows!\n";
+                    output << "As punishment you lose a turn and the enemy attacks you\n";
+                    enemy.attack(player);
                 }
                 else{
                     output << "You use wind arrow strike!\n";
                     hero.wind_arrow_strike(enemy);
+                    output << "You have " << hero.get_arrow_count() << " arrows left.\n";
+
                 }
             }
             else if (choice == 'i')
@@ -137,6 +166,8 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
                 if (hero.get_arrow_count() <= 0)
                 {
                     output << "You're out of arrows!\n";
+                    output << "As punishment you lose a turn and the enemy attacks you\n";
+                    enemy.attack(player);
                 }
                 else
                 {
