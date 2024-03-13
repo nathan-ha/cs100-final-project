@@ -29,16 +29,16 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         bool is_invulnerable = false; // only used by thief
         if(player.get_class_type() == WARRIOR || player.get_class_type() == THIEF)
         {
-            output << "Attack (a)\n"
-                << "Special Attack (s)\n"
-                << "Use item (i)\n"
+            output << "(a) Attack\n"
+                << "(s) Special Attack\n"
+                << "(i) Use item\n"
                 << "Flee or Quit(f/q)\n\n";
         }
         else if(player.get_class_type() == ARCHER)
         {
-            output << "Bow Smack (a)\n" 
-                << "Special Attack (s)\n"
-                << "Shoot Arrow (i)\n" 
+            output << "(a) Bow Smack (costs 0 arrows)\n" 
+                << "(s) Special Attack (costs 5 arrwos)\n"
+                << "(i) Shoot Arrow (costs 1 arrow)\n" 
                 << "Flee or Quit(f/q)\n\n";
         }
         
@@ -156,6 +156,8 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
             {
                 output << "You smack the enemy with your bow!\n";
                 hero.bow_smack(enemy);
+                output << "You have " << hero.get_arrow_count() << " arrows left.\n";
+
             }
             else if (choice == 's')
             {
@@ -200,8 +202,15 @@ bool fight(Character& player, Character& enemy, std::istream& input = std::cin, 
         if (enemy.get_health() <= 0)
         {
             output << "Congratulations! You defeated the " << enemy.get_race() << '\n';
-            weapon_drop_rate(player);
-            return true;
+            if(enemy.get_race() == "Big Dragon")
+            {
+                return true;
+            }
+            else
+            {
+                weapon_drop_rate(player);
+                return true;
+            }
         }
 
 

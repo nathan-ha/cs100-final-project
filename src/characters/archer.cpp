@@ -5,7 +5,7 @@ using namespace std;
 
 Archer::Archer(const string &name, const string &race, int health, const Weapon &current_weapon)
     : Character(name, race, health, current_weapon),
-      arrow_count(75)
+      arrow_count(40)
 {
 }
 
@@ -18,7 +18,7 @@ void Archer::shoot_arrow(Character &target)
 
 void Archer::wind_arrow_strike(Character &target)
 {
-    int dmg_amount = current_weapon.damage * 5; 
+    int dmg_amount = current_weapon.damage * 2; 
     int target_new_health = target.get_health() - dmg_amount;
     target.set_health(target_new_health);
     arrow_count -= 5;
