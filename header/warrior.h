@@ -5,6 +5,7 @@ class Warrior : public Character
 {
 protected:
     int bomb_count;
+    int skillcount;
 
 public:
     Warrior(const string &name, const string &race, int health, const Weapon &current_weapon);
@@ -13,4 +14,6 @@ public:
     void throw_bomb(Character &target);
     int get_bomb_count();
     void set_bomb_count(int count);
+    void set_skill_count(int s);
+    int get_skill_count();
 };

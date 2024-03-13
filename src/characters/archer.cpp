@@ -5,7 +5,7 @@ using namespace std;
 
 Archer::Archer(const string &name, const string &race, int health, const Weapon &current_weapon)
     : Character(name, race, health, current_weapon),
-      arrow_count(50)
+      arrow_count(75)
 {
 }
 
