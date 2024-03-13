@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
+#include <sstream>
 #include "../header/character.h"
 #include "../header/archer.h"
 #include "../header/warrior.h"
 #include "../header/thief.h"
 #include "../header/weapon_inv.h"
-#include <sstream>
 
 TEST(WeaponDropTest, WarriorWeaponDrop) {
     Warrior player("Alice", "Human", 100, Weapon("Sword", 15, WARRIOR));
