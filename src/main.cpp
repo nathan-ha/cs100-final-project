@@ -176,6 +176,7 @@ int main()
     player_wins = fight(*player, goblin);
     if (!player_wins)
     {
+        cout << endl << "GAME OVER" << endl;
         delete player;
         return 0;
     }
@@ -314,6 +315,7 @@ int main()
         player_wins = fight(*player, skeleton);
         if (!player_wins)
         {
+            cout << endl << "GAME OVER" << endl;
             delete player;
             return 0;
         }
@@ -357,6 +359,7 @@ int main()
         player_wins = fight(*player, wolf);
         if (!player_wins)
         {
+            cout << endl << "GAME OVER" << endl;
             delete player;
             return 0;
         }
@@ -445,6 +448,7 @@ int main()
                     player_wins = fight(*player, skeleton2);
                     if (!player_wins)
                     {
+                        cout << endl << "GAME OVER" << endl;
                         delete player;
                         return 0;
                     }
@@ -452,10 +456,11 @@ int main()
                     player_wins = fight(*player, goblin2);
                     if (!player_wins)
                     {
+                        cout << endl << "GAME OVER" << endl;
                         delete player;
                         return 0;
                     }
-                    max_health = max_health * 1.25;
+                    //max_health = max_health * 1.25;
                     cout << "You get healed to " << max_health << " hp\n";
                     player->set_health(max_health);
 
@@ -507,10 +512,11 @@ int main()
                         Dragon fight goes here
                         */
                         
-                        Dragon dragon("Dragon King", "Big Dragon", 150, Weapon("Fire Breath", 60, ENEMY));
+                        Dragon dragon("Dragon King", "Big Dragon", 200, Weapon("Fire Breath", 60, ENEMY));
                         player_wins = fight(*player, dragon);
                         if (!player_wins)
                         {
+                            cout << endl << "GAME OVER" << endl;
                             delete player;
                             return 0;
                         }
@@ -613,7 +619,7 @@ int main()
                      << endl
                      << endl;
                 userchoice = "";
-                cout << "Tring to turn the other way, a villager spots you fleeing and thinks you are the one behind the attack" << endl;
+                cout << "Trying to turn the other way, a villager spots you fleeing and thinks you are the one behind the attack" << endl;
                 cout << "The scout relays information to other villagers and be have been branded a traitor to the kingdom" << endl;
                 cout << "Unbeingknownst to you, a hunting party has been set out to hunt you down" << endl;
                 cout << "An hour later after you flee the burning village, you are ambushed by the vengeful villagers and die" << endl;
@@ -630,7 +636,7 @@ int main()
                      << endl;
                 userchoice = "";
                 cout << "You decide on helping the villagers..." << endl
-                     << "You draw your " << playerweapon.name << " and rush to the villagers aid" << endl;
+                     << "You draw your " << player->get_weapon().name << " and rush to the villagers aid" << endl;
                 cout << "Upon entering the village limits, you are face to face with a skeleton knight" << endl;
                 cout << "The villagers take note that you are not the one responsible for the attack on their home and have come to aid you in the ensuing battle." << endl;
 
@@ -648,6 +654,7 @@ int main()
                 player_wins = fight(*player, skeleton_knight);
                 if (!player_wins)
                 {
+                    cout << endl << "GAME OVER" << endl;
                     delete player;
                     return 0;
                 }
@@ -722,7 +729,7 @@ int main()
                          << endl
                          << endl;
                     userchoice = "";
-                    cout << "You draw your " << playerweapon.name << " and prepare for battle" << endl;
+                    cout << "You draw your " << player->get_weapon().name << " and prepare for battle" << endl;
 
                     cout << endl
                          << " -------------------------------------------------------------------------------" << endl
@@ -737,6 +744,7 @@ int main()
                     player_wins = fight(*player, skeleton_knight);
                     if (!player_wins)
                     {
+                        cout << endl << "GAME OVER" << endl;
                         delete player;
                         return 0;
                     }
@@ -792,10 +800,11 @@ int main()
                         /*
                         Dragon fight goes here
                         */
-                        Dragon dragon("Dragorn", "Big Dragon", 150, Weapon("Fire Breath", 60, ENEMY));
+                        Dragon dragon("Dragorn", "Big Dragon", 200, Weapon("Fire Breath", 60, ENEMY));
                         player_wins = fight(*player, dragon);
                         if (!player_wins)
                         {
+                            cout << endl << "GAME OVER" << endl;
                             delete player;
                             return 0;
                         }
@@ -946,8 +955,9 @@ int main()
             cout << "You stand your ground, however the dragon notices you, and you are forced to fight for your life" << endl;
             /*
             this fight is meant to be a impossible fight
+            player.get_weapon().name
             */
-            cout << "Faced with no other choice, you draw your " << playerweapon.name << " and commence a hopeless battle" << endl;
+            cout << "Faced with no other choice, you draw your " << player->get_weapon().name << " and commence a hopeless battle" << endl;
 
             cout << endl
                  << " -------------------------------------------------------------------------------" << endl
@@ -958,7 +968,7 @@ int main()
             /*
             impossible dragon fight goes here --> is scripted to make GAME OVER no matter what the player does
             */
-            Dragon dragon2("Dragogon", "REALLY Big Dragon", 1000, Weapon("Super Fire Breath", 80, ENEMY));
+            Dragon dragon2("Dragogon", "REALLY Big Dragon", 9999, Weapon("Super Fire Breath", 80, ENEMY));
             player_wins = fight(*player, dragon2);
 
             cout << endl

@@ -5,7 +5,7 @@ Thief::Thief(const string &name, const string &race, int health, const Weapon &c
     : Character(name, race, health, current_weapon),
       throwing_knife_count(5),
       is_invulnerable(false),
-      skillcount(10)
+      skillcount(6)
 {
 }
 
