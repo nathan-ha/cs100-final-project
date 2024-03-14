@@ -176,5 +176,5 @@ D - We displayed this principle in the attack functions implemented by the deriv
  ## Installation/Usage
  To install, make sure you have git. Clone this repository and run `git submodule init && git submodule update`. Make sure you have cmake and a c++ compiler installed. Then run `cmake . && make` in the terminal to compile. To run the game, run the command `./bin/runBuild`. From there, you can follow the instructions on the screen.
  ## Testing
-We tested the code by running unit tests to ensure all the classes and functions run properly. Before we push new code, we made sure to pass all the tests first. We also played the game itself to make sure everything ran smoothly.
+We tested the code by running unit tests (Google Test) to ensure all the classes and functions run properly. Before we push new code, we made sure to pass all the tests first. We also played the game itself to make sure everything ran smoothly. We also used Valgrind to check for memory leaks.
  
